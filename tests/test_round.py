@@ -5,10 +5,29 @@ from datetime import datetime
 from pathlib import Path
 from unittest.mock import patch
 
-from run_round import TIMEZONE, aggregate, run_round, run_once
+from run_round import TIMEZONE, aggregate, run_round, run_once, top_combinations
 
 
 class RoundTests(unittest.TestCase):
+    def test_top_five_matches_exhaustive_scores_and_ties(self):
+        from collections import Counter
+        from itertools import combinations
+        ranked=list(range(1,9));counts=Counter(dict(zip(ranked,[9,7,7,6,6,5,3,0])))
+        expected=sorted(combinations(range(8),3),key=lambda indices:(-sum(counts[ranked[i]] for i in indices),indices))[:5]
+        self.assertEqual(top_combinations(ranked,counts,3,5),[[ranked[i] for i in row] for row in expected])
+        self.assertEqual(len({tuple(r) for r in top_combinations(ranked,counts,3,5)}),5)
+        with self.assertRaises(ValueError): top_combinations([1,2],counts,2,2)
+
+    def test_five_main_combinations_keep_bonus_separate(self):
+        rows=self.fixture()
+        for row in rows:
+            row['product']='655';row['round_id']='655_1425_091026'
+            row['suggestion']['numbers']=[1,2,3,4,5,6,15]
+        result=aggregate(rows,'655_1425_091026',datetime(2026,10,9,14,25,tzinfo=TIMEZONE),recommendation_count=5)
+        self.assertEqual(len(result['recommendations']),5)
+        self.assertEqual(len({tuple(r['numbers'][:6]) for r in result['recommendations']}),5)
+        self.assertTrue(all(r['numbers'][-1]==15 for r in result['recommendations']))
+
     def fixture(self, product='645'):
         numbers=[1,2,3,4,5,6] if product=='645' else [1,2,3,4,5,2]
         return [{'iteration':i,'round_id':f'{product}_1425_091026','product':product,

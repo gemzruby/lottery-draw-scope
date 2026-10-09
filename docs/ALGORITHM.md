@@ -138,8 +138,8 @@ All configurations use at least 120 preceding draws to ensure comparable targets
 
 Each run also generates a suggestion using the selected configuration and the
 latest audited history. The round summary counts appearances in the ten
-suggestions, then returns the top two main-number combinations under an additive
-consensus score. Ties prefer smaller numbers. Bonus numbers are ranked separately.
+suggestions, then returns the requested main-number combinations under an additive
+consensus score (`RECOMMENDATIONS=2` by default). Ties prefer smaller numbers. Bonus numbers are ranked separately.
 Holdout scores are reported but never used to select or weight suggestions.
 
 Files use the round start time in Asia/Ho_Chi_Minh:
@@ -183,3 +183,9 @@ Results live in each product/round directory. See [STABILITY.md](STABILITY.md).
 ChaCha8 block outputs are cached by immutable key and counter, with a maximum
 of 16,384 entries per process. Cache hits preserve counter advancement and word
 consumption; returned block lists cannot mutate cached tuples.
+
+Stability checkpoints are configurable, for example
+`make stability PRODUCT=655 STAGES="20 50 200" RECOMMENDATIONS=5 WORKERS=4`.
+Recommendations are distinct main-number sets, ranked by additive consensus
+score with deterministic rank-index tie breaks. The highest-ranked bonus remains
+separate. Increasing the count does not change backtest selection or the RNG.

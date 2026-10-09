@@ -4,9 +4,24 @@
 make stability PRODUCT=645 SAMPLES=1000 WORKERS=4
 ```
 
-Run 100 evaluations with summaries after iterations 10, 30, and 100. These are
+By default, run 100 evaluations with summaries after iterations 10, 30, and 100. These are
 nested prefixes of one seed sequence, so the first ten runs are not recomputed.
 See [latest results](STABILITY_RESULTS.md).
+
+For Power 6/55 with five final consensus combinations:
+
+```bash
+make stability PRODUCT=655 STAGES="20 50 200" RECOMMENDATIONS=5 SAMPLES=1000 WORKERS=4
+```
+
+`STAGES` accepts distinct ascending positive checkpoint sizes; the last size is
+the total run count. `RECOMMENDATIONS` controls the number of distinct main
+combinations. The highest-ranked bonus is appended separately to each one.
+The rank uses summed main-number consensus counts; ties use deterministic rank
+indices. It does not enumerate all possible tickets.
+
+Product-specific reports preserve [645 results](STABILITY_645_RESULTS.md) and
+655 results when available, while `STABILITY_RESULTS.md` shows the latest run.
 
 ## Directory layout
 
@@ -19,9 +34,7 @@ backtests/
   645/<round_id>/
     manifest.json
     runs/<round_id>_1.json ... <round_id>_100.json
-    checkpoints/10.json
-    checkpoints/30.json
-    checkpoints/100.json
+    checkpoints/<stage>.json
     comparison.json
   655/<round_id>/
     manifest.json
@@ -55,7 +68,7 @@ cache to accelerate repeated seeds without changing outputs.
 ## Resume
 
 ```bash
-make stability PRODUCT=645 RESUME=645_HHmm_ddMMyy WORKERS=4
+make stability PRODUCT=655 STAGES="20 50 200" RECOMMENDATIONS=5 RESUME=655_HHmm_ddMMyy WORKERS=4
 ```
 
 Use the actual ID from `manifest.json`. Completed runs are loaded and validated;

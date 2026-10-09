@@ -2,6 +2,8 @@
 import argparse
 import hashlib
 import json
+import heapq
+from math import comb
 from collections import Counter
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from datetime import datetime
@@ -53,7 +55,28 @@ def run_once(task):
     return result
 
 
-def aggregate(results, round_id, started_at, expected_size=ROUND_SIZE, file_prefix=""):
+def top_combinations(ranked, counts, k, count):
+    """Enumerate highest additive-score combinations without exploring all tickets."""
+    if not isinstance(count,int) or isinstance(count,bool) or not 1<=count<=comb(len(ranked),k):
+        raise ValueError('Invalid recommendation count')
+    start=tuple(range(k))
+    queue=[(-sum(counts[ranked[i]] for i in start),start)]
+    seen={start};results=[]
+    while queue and len(results)<count:
+        _,indices=heapq.heappop(queue)
+        results.append([ranked[i] for i in indices])
+        for position in range(k):
+            advanced=indices[position]+1
+            limit=indices[position+1] if position+1<k else len(ranked)
+            if advanced>=limit: continue
+            neighbor=indices[:position]+(advanced,)+indices[position+1:]
+            if neighbor in seen: continue
+            seen.add(neighbor)
+            heapq.heappush(queue,(-sum(counts[ranked[i]] for i in neighbor),neighbor))
+    return results
+
+
+def aggregate(results, round_id, started_at, expected_size=ROUND_SIZE, file_prefix="", recommendation_count=2):
     if len(results)!=expected_size or {r['iteration'] for r in results}!=set(range(1,expected_size+1)):
         raise ValueError(f'A complete aggregate must contain exactly {expected_size} distinct iterations')
     results = sorted(results,key=lambda r:r['iteration'])
@@ -74,9 +97,7 @@ def aggregate(results, round_id, started_at, expected_size=ROUND_SIZE, file_pref
             if not 1<=numbers[k]<=bonus_max: raise ValueError('Invalid suggested bonus')
             bonus_counts[numbers[k]]+=1
     ranked=sorted(range(1,maximum+1),key=lambda n:(-main_counts[n],n))
-    # Two highest-scoring combinations under an additive consensus-count score.
-    # The second swaps the lowest-ranked selected main number for the next rank.
-    combinations=[ranked[:k],ranked[:k-1]+[ranked[k]]]
+    combinations=top_combinations(ranked,main_counts,k,recommendation_count)
     bonus = min(range(1,bonus_max+1),key=lambda n:(-bonus_counts[n],n)) if bonus_max else None
     recommendations=[]
     for rank,chosen in enumerate(combinations,1):
@@ -89,7 +110,8 @@ def aggregate(results, round_id, started_at, expected_size=ROUND_SIZE, file_pref
             'timezone':str(TIMEZONE),'source_sha256':source_hash,
             'latest_history_date':results[0]['suggestion']['latest_history_date'],
             'protocol':results[0]['protocol'],'audit':results[0]['audit'],
-            'method':'Count main-number appearances in per-run suggestions; rank by count then number. Return the top two additive-consensus combinations. Bonus uses its most frequent suggestion.',
+            'recommendation_count':recommendation_count,
+            'method':'Count main-number appearances in per-run suggestions; rank by count then number. Return highest additive-consensus combinations with deterministic rank-index tie breaks. Bonus uses its most frequent suggestion.',
             'note':'Consensus reflects agreement between seeded runs, not winning probabilities. All runs reuse the same lottery history. Holdout scores are reported but never used to rank suggestions.',
             'recommendations':recommendations,
             'main_ranking':[{'number':n,'round_count':main_counts[n]} for n in ranked],
@@ -104,9 +126,10 @@ def aggregate(results, round_id, started_at, expected_size=ROUND_SIZE, file_pref
 
 def run_round(product='645', data_dir=ROOT/'databases', output_dir=ROOT/'backtests',
               seed=None, samples=1000, development=60, holdout=60, workers=2, started_at=None,
-              runs=10, checkpoints=None, resume=None):
+              runs=10, checkpoints=None, resume=None, recommendation_count=2):
     if product not in PRODUCTS: raise ValueError('Unknown product')
-    if min(samples,development,holdout,workers,runs)<1: raise ValueError('Counts must be positive')
+    if min(samples,development,holdout,workers,runs,recommendation_count)<1: raise ValueError('Counts must be positive')
+    if recommendation_count>comb(PRODUCTS[product][0],PRODUCTS[product][1]): raise ValueError('Too many recommendations')
     if workers>4: raise ValueError('workers must be 1..4')
     checkpoints=sorted(set(checkpoints or [runs]))
     if checkpoints[0]<1 or checkpoints[-1]>runs: raise ValueError('Invalid checkpoints')
@@ -124,6 +147,7 @@ def run_round(product='645', data_dir=ROOT/'databases', output_dir=ROOT/'backtes
             raise ValueError('Migrated rounds are complete archives; start a new round')
         started_at=datetime.fromisoformat(manifest['started_at'])
         base_seed=manifest['parameters']['base_seed']
+        manifest['parameters'].setdefault('recommendation_count',2)
         if seed is not None and (seed & MASK64)!=base_seed: raise ValueError('Resume seed mismatch')
     else:
         started_at=(started_at or datetime.now(TIMEZONE)).astimezone(TIMEZONE)
@@ -140,7 +164,7 @@ def run_round(product='645', data_dir=ROOT/'databases', output_dir=ROOT/'backtes
         source=data_dir/f'{product}.csv'
         source_hash=hashlib.sha256(source.read_bytes()).hexdigest()
         parameters=dict(runs=runs,samples=samples,development=development,holdout=holdout,
-                        base_seed=base_seed,checkpoints=checkpoints)
+                        base_seed=base_seed,checkpoints=checkpoints,recommendation_count=recommendation_count)
         if manifest is not None:
             if manifest['source_sha256']!=source_hash or manifest['parameters']!=parameters:
                 raise ValueError('Resume dataset or parameters differ from saved round')
@@ -178,7 +202,7 @@ def run_round(product='645', data_dir=ROOT/'databases', output_dir=ROOT/'backtes
             manifest['completed_iterations']=sorted(results)
             for size in checkpoints:
                 if size not in manifest['completed_checkpoints'] and all(i in results for i in range(1,size+1)):
-                    summary=aggregate([results[i] for i in range(1,size+1)],round_id,started_at,size,prefix)
+                    summary=aggregate([results[i] for i in range(1,size+1)],round_id,started_at,size,prefix,recommendation_count)
                     write_json(checkpoint_dir/f'{size}.json',summary)
                     if size not in manifest['completed_checkpoints']:
                         manifest['completed_checkpoints'].append(size)
@@ -196,7 +220,7 @@ def run_round(product='645', data_dir=ROOT/'databases', output_dir=ROOT/'backtes
                 save_progress()
         if hashlib.sha256(source.read_bytes()).hexdigest()!=source_hash:
             raise ValueError('Source CSV changed during the round; no summary written')
-        summary=aggregate(list(results.values()),round_id,started_at,runs,prefix)
+        summary=aggregate(list(results.values()),round_id,started_at,runs,prefix,recommendation_count)
         write_json(suggestions/f'{round_id}.json',summary)
         manifest['status']='complete';manifest['completed_at']=datetime.now(TIMEZONE).isoformat()
         write_json(round_dir/'manifest.json',manifest)
@@ -239,13 +263,14 @@ def main():
     parser.add_argument('--runs',type=int,default=10)
     parser.add_argument('--checkpoints',nargs='+',type=int)
     parser.add_argument('--resume',help='resume an interrupted round ID')
+    parser.add_argument('--recommendations',type=int,default=2)
     parser.add_argument('--data-dir',type=Path,default=ROOT/'databases')
     parser.add_argument('--output-dir',type=Path,default=ROOT/'backtests')
     args=parser.parse_args()
     try:
         summary=run_round(args.product,args.data_dir,args.output_dir,args.seed,args.samples,
                           args.development_draws,args.holdout_draws,args.workers,runs=args.runs,
-                          checkpoints=args.checkpoints,resume=args.resume)
+                          checkpoints=args.checkpoints,resume=args.resume,recommendation_count=args.recommendations)
         if args.output_dir.resolve()==(ROOT/'backtests').resolve():
             write_report(summary)
     except (ValueError,FileExistsError) as error:

@@ -44,10 +44,10 @@ history. Recommendation generation has a separate recorded seed.
 
 The final suggestion file is written only after all requested iterations finish. It contains
 source filenames, seeds, configurations, holdout metrics, number rankings, and
-two distinct consensus combinations. Main counts measure appearances in the ten
+distinct consensus combinations (`RECOMMENDATIONS=2` by default). Main counts measure appearances in the ten
 per-run suggestions. The first combination takes the six highest-ranked main
-numbers for 645/655, or five for 535. The second replaces the last selected rank
-with the next rank. Ties prefer smaller numbers. Both use the highest-ranked
+numbers for 645/655, or five for 535. Further combinations maximize the same summed main-number count while remaining
+distinct. A best-first search avoids enumerating the entire ticket space. Ties prefer smaller numbers. Both use the highest-ranked
 bonus for 535/655, appended separately.
 
 These maximize the additive main consensus score; they are not estimates of
@@ -62,3 +62,9 @@ New rounds use a new minute. Completed runs are not recomputed. The latest Markd
 
 For a nested 10/30/100-run comparison, use `make stability PRODUCT=645 WORKERS=4`.
 See [STABILITY.md](STABILITY.md) for checkpoint metrics and the full directory layout.
+
+Custom stability stages and recommendation counts are supported for all products:
+
+```bash
+make stability PRODUCT=655 STAGES="20 50 200" RECOMMENDATIONS=5 WORKERS=4
+```

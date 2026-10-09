@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from unittest.mock import patch
 
-from experiments.stability import compare_checkpoints, organize_legacy
+from experiments.stability import compare_checkpoints, organize_legacy, write_stability_report
 from main import ChaCha8, _chacha8_block
 from run_round import TIMEZONE, aggregate, run_round
 from tests import test_round
@@ -26,6 +26,27 @@ class ImmediatePool:
 
 
 class StabilityTests(unittest.TestCase):
+    def test_custom_655_stages_and_five_reported_combinations(self):
+        template=test_round.RoundTests().fixture()
+        rows=[]
+        for i in range(1,201):
+            row=copy.deepcopy(template[(i-1)%10])
+            row.update(iteration=i,product='655',round_id='655_1425_091026')
+            row['suggestion']['numbers']=[1,2,3,4,5,6,15]
+            rows.append(row)
+        stamp=datetime(2026,10,9,14,25,tzinfo=TIMEZONE)
+        snapshots=[aggregate(rows[:n],'655_1425_091026',stamp,n,recommendation_count=5) for n in [20,50,200]]
+        comparison=compare_checkpoints(snapshots)
+        self.assertEqual([r['runs'] for r in comparison['checkpoints']],[20,50,200])
+        self.assertTrue(all(len(r['recommendations'])==5 for r in comparison['checkpoints']))
+        with tempfile.TemporaryDirectory() as d:
+            path=Path(d)/'report.md';write_stability_report(comparison,path)
+            text=path.read_text()
+            self.assertIn('20, 50, 200-run',text)
+            self.assertIn('## Final consensus combinations',text)
+            self.assertIn('| 5 |',text)
+            self.assertIn('| 15 |',text)
+
     def checkpoints(self):
         rows=test_round.RoundTests().fixture()
         rows=[dict(copy.deepcopy(rows[(i-1)%10]),iteration=i) for i in range(1,101)]

@@ -19,6 +19,7 @@ make backtest PRODUCT=645
 make backtest PRODUCT=645 STRATEGY=simulate SAMPLES=1000
 make round PRODUCT=645 WORKERS=2
 make stability PRODUCT=645 WORKERS=4
+make stability PRODUCT=655 STAGES="20 50 200" RECOMMENDATIONS=5 WORKERS=4
 make test
 ```
 
