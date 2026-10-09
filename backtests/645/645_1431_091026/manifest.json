@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "origin": "migrated",
+  "round_id": "645_1431_091026",
+  "product": "645",
+  "started_at": "2026-10-09T14:31:19.475785+07:00",
+  "status": "complete",
+  "source_sha256": "ef2b95fd50bcb042636c20a44704bcd698c8518aceb2bb532ad1497c9dd926ba",
+  "completed_iterations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "completed_checkpoints": [
+    10
+  ]
+}

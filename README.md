@@ -18,6 +18,7 @@ make stats PRODUCT=655
 make backtest PRODUCT=645
 make backtest PRODUCT=645 STRATEGY=simulate SAMPLES=1000
 make round PRODUCT=645 WORKERS=2
+make stability PRODUCT=645 WORKERS=4
 make test
 ```
 
@@ -46,9 +47,11 @@ numbers separately, and returns a suggested combination of the highest ranked
 numbers. Use `SAMPLES`, `SEED`, `PRODUCT`, and `WINDOW` to adjust the simulation.
 These rankings measure engine sampling frequency, not winning probabilities.
 
-`make round` runs ten backtests for the selected product, with different seeds,
+`make round` runs ten backtests by default (`RUNS=30` changes the count), with different seeds,
 then saves a consensus suggestion file. `make evaluate` is an alias. See
 [round workflow](docs/ROUNDS.md) and the [latest report](docs/EVALUATION.md).
+`make stability PRODUCT=645 WORKERS=4` compares nested 10/30/100-run checkpoints;
+see [sampling stability](docs/STABILITY.md).
 
 To install the CLI in a virtual environment, run `python3 -m pip install -e .`,
 then use `drawscope predict --data databases/645.csv --seed 42 --tickets 5`.
@@ -64,7 +67,8 @@ then use `drawscope predict --data databases/645.csv --seed 42 --tickets 5`.
 - `Makefile`: command shortcuts.
 - `evaluate.py`: data audits and strategy comparisons.
 - `run_round.py`: ten-run orchestration and consensus suggestions.
-- `backtests/`: saved backtest and evaluation outputs.
+- `backtests/`: runs grouped by product and round, plus a central suggestions directory.
+- `experiments/`: checkpoint stability comparisons and legacy file organization.
 
 CSV columns are `draw_code,draw_date,numbers,bonus`. Main numbers are separated
 by spaces. Mega 6/45 has an empty bonus field. For 645/655, draw codes are

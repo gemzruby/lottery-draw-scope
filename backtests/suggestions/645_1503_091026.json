@@ -1,0 +1,3979 @@
+{
+  "round_id": "645_1503_091026",
+  "product": "645",
+  "round_size": 100,
+  "base_seed": 4866290347993669076,
+  "started_at": "2026-10-09T15:03:04.847656+07:00",
+  "completed_at": "2026-10-09T15:07:44.069725+07:00",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "source_sha256": "ef2b95fd50bcb042636c20a44704bcd698c8518aceb2bb532ad1497c9dd926ba",
+  "latest_history_date": "2026-10-07",
+  "protocol": {
+    "windows": [
+      30,
+      60,
+      120,
+      0
+    ],
+    "seed_offsets": [
+      4866290347993669076
+    ],
+    "min_history": 120,
+    "screen_samples": 1000,
+    "confirmation_samples": 1000,
+    "development_codes": [
+      20260102,
+      20260104,
+      20260107,
+      20260109,
+      20260111,
+      20260114,
+      20260116,
+      20260118,
+      20260121,
+      20260123,
+      20260125,
+      20260128,
+      20260130,
+      20260201,
+      20260204,
+      20260206,
+      20260208,
+      20260211,
+      20260213,
+      20260215,
+      20260218,
+      20260220,
+      20260222,
+      20260225,
+      20260227,
+      20260301,
+      20260304,
+      20260306,
+      20260308,
+      20260311,
+      20260313,
+      20260315,
+      20260318,
+      20260320,
+      20260322,
+      20260325,
+      20260327,
+      20260329,
+      20260401,
+      20260403,
+      20260405,
+      20260408,
+      20260410,
+      20260412,
+      20260415,
+      20260417,
+      20260419,
+      20260422,
+      20260424,
+      20260426,
+      20260429,
+      20260501,
+      20260503,
+      20260506,
+      20260508,
+      20260510,
+      20260513,
+      20260515,
+      20260517,
+      20260520
+    ],
+    "holdout_codes": [
+      20260522,
+      20260524,
+      20260527,
+      20260529,
+      20260531,
+      20260603,
+      20260605,
+      20260607,
+      20260610,
+      20260612,
+      20260614,
+      20260617,
+      20260619,
+      20260621,
+      20260624,
+      20260626,
+      20260628,
+      20260701,
+      20260703,
+      20260705,
+      20260708,
+      20260710,
+      20260712,
+      20260715,
+      20260717,
+      20260719,
+      20260722,
+      20260724,
+      20260726,
+      20260729,
+      20260731,
+      20260802,
+      20260805,
+      20260807,
+      20260809,
+      20260812,
+      20260814,
+      20260816,
+      20260819,
+      20260821,
+      20260823,
+      20260826,
+      20260828,
+      20260830,
+      20260902,
+      20260904,
+      20260906,
+      20260909,
+      20260911,
+      20260913,
+      20260916,
+      20260918,
+      20260920,
+      20260923,
+      20260925,
+      20260927,
+      20260930,
+      20261002,
+      20261004,
+      20261007
+    ],
+    "selection_metric": "development mean main hits across seed offsets",
+    "holdout_history": "earlier holdout draws become available to later predictions",
+    "caveat": "Exploratory: earlier full-history backtests were already inspected. This is not a pristine unseen holdout."
+  },
+  "audit": {
+    "records": 1564,
+    "warnings": [
+      {
+        "code": 20190418,
+        "date": "2019-04-18",
+        "reason": "unusual_weekday_requires_review"
+      }
+    ],
+    "excluded_codes": [],
+    "independently_verified_results": false
+  },
+  "method": "Count main-number appearances in per-run suggestions; rank by count then number. Return the top two additive-consensus combinations. Bonus uses its most frequent suggestion.",
+  "note": "Consensus reflects agreement between seeded runs, not winning probabilities. All runs reuse the same lottery history. Holdout scores are reported but never used to rank suggestions.",
+  "recommendations": [
+    {
+      "rank": 1,
+      "numbers": [
+        3,
+        6,
+        16,
+        31,
+        36,
+        45
+      ],
+      "main_consensus_score": 173
+    },
+    {
+      "rank": 2,
+      "numbers": [
+        3,
+        6,
+        16,
+        27,
+        31,
+        36
+      ],
+      "main_consensus_score": 172
+    }
+  ],
+  "main_ranking": [
+    {
+      "number": 36,
+      "round_count": 41
+    },
+    {
+      "number": 16,
+      "round_count": 35
+    },
+    {
+      "number": 3,
+      "round_count": 29
+    },
+    {
+      "number": 6,
+      "round_count": 27
+    },
+    {
+      "number": 31,
+      "round_count": 21
+    },
+    {
+      "number": 45,
+      "round_count": 20
+    },
+    {
+      "number": 27,
+      "round_count": 19
+    },
+    {
+      "number": 41,
+      "round_count": 19
+    },
+    {
+      "number": 19,
+      "round_count": 18
+    },
+    {
+      "number": 7,
+      "round_count": 17
+    },
+    {
+      "number": 15,
+      "round_count": 17
+    },
+    {
+      "number": 44,
+      "round_count": 17
+    },
+    {
+      "number": 2,
+      "round_count": 16
+    },
+    {
+      "number": 22,
+      "round_count": 16
+    },
+    {
+      "number": 28,
+      "round_count": 16
+    },
+    {
+      "number": 37,
+      "round_count": 16
+    },
+    {
+      "number": 33,
+      "round_count": 15
+    },
+    {
+      "number": 9,
+      "round_count": 13
+    },
+    {
+      "number": 24,
+      "round_count": 13
+    },
+    {
+      "number": 4,
+      "round_count": 12
+    },
+    {
+      "number": 12,
+      "round_count": 12
+    },
+    {
+      "number": 10,
+      "round_count": 11
+    },
+    {
+      "number": 13,
+      "round_count": 11
+    },
+    {
+      "number": 20,
+      "round_count": 11
+    },
+    {
+      "number": 25,
+      "round_count": 11
+    },
+    {
+      "number": 43,
+      "round_count": 11
+    },
+    {
+      "number": 21,
+      "round_count": 10
+    },
+    {
+      "number": 29,
+      "round_count": 10
+    },
+    {
+      "number": 39,
+      "round_count": 10
+    },
+    {
+      "number": 23,
+      "round_count": 9
+    },
+    {
+      "number": 30,
+      "round_count": 9
+    },
+    {
+      "number": 35,
+      "round_count": 9
+    },
+    {
+      "number": 38,
+      "round_count": 9
+    },
+    {
+      "number": 1,
+      "round_count": 8
+    },
+    {
+      "number": 11,
+      "round_count": 8
+    },
+    {
+      "number": 32,
+      "round_count": 8
+    },
+    {
+      "number": 14,
+      "round_count": 6
+    },
+    {
+      "number": 18,
+      "round_count": 6
+    },
+    {
+      "number": 40,
+      "round_count": 6
+    },
+    {
+      "number": 42,
+      "round_count": 6
+    },
+    {
+      "number": 26,
+      "round_count": 5
+    },
+    {
+      "number": 34,
+      "round_count": 5
+    },
+    {
+      "number": 5,
+      "round_count": 4
+    },
+    {
+      "number": 8,
+      "round_count": 4
+    },
+    {
+      "number": 17,
+      "round_count": 4
+    }
+  ],
+  "bonus_ranking": [],
+  "mean_holdout_main_hits": 0.7611666666666667,
+  "mean_holdout_baseline_hits": 0.7965,
+  "runs": [
+    {
+      "iteration": 1,
+      "file": "645/645_1503_091026/runs/645_1503_091026_1.json",
+      "seed_offset": 4866290347993669076,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        13,
+        19,
+        20,
+        28,
+        35,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7666666666666667,
+        "mean_baseline_hits": 0.6666666666666666,
+        "mean_difference": 0.10000000000000009,
+        "seed_mean_min": 0.7666666666666667,
+        "seed_mean_max": 0.7666666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7666666666666667
+        ],
+        "baseline_seed_means": [
+          0.6666666666666666
+        ]
+      }
+    },
+    {
+      "iteration": 2,
+      "file": "645/645_1503_091026/runs/645_1503_091026_2.json",
+      "seed_offset": 4866290347994669079,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        27,
+        31,
+        36,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8,
+        "mean_baseline_hits": 0.85,
+        "mean_difference": -0.04999999999999993,
+        "seed_mean_min": 0.8,
+        "seed_mean_max": 0.8,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8
+        ],
+        "baseline_seed_means": [
+          0.85
+        ]
+      }
+    },
+    {
+      "iteration": 3,
+      "file": "645/645_1503_091026/runs/645_1503_091026_3.json",
+      "seed_offset": 4866290347995669082,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        16,
+        24,
+        32,
+        36,
+        38,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.6666666666666666,
+        "mean_baseline_hits": 0.7833333333333333,
+        "mean_difference": -0.1166666666666667,
+        "seed_mean_min": 0.6666666666666666,
+        "seed_mean_max": 0.6666666666666666,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.6666666666666666
+        ],
+        "baseline_seed_means": [
+          0.7833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 4,
+      "file": "645/645_1503_091026/runs/645_1503_091026_4.json",
+      "seed_offset": 4866290347996669085,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        3,
+        26,
+        28,
+        34,
+        41,
+        43
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.75,
+        "mean_baseline_hits": 0.7666666666666667,
+        "mean_difference": -0.01666666666666672,
+        "seed_mean_min": 0.75,
+        "seed_mean_max": 0.75,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.75
+        ],
+        "baseline_seed_means": [
+          0.7666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 5,
+      "file": "645/645_1503_091026/runs/645_1503_091026_5.json",
+      "seed_offset": 4866290347997669088,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        7,
+        18,
+        22,
+        24,
+        25,
+        35
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8666666666666667,
+        "mean_baseline_hits": 0.5666666666666667,
+        "mean_difference": 0.30000000000000004,
+        "seed_mean_min": 0.8666666666666667,
+        "seed_mean_max": 0.8666666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8666666666666667
+        ],
+        "baseline_seed_means": [
+          0.5666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 6,
+      "file": "645/645_1503_091026/runs/645_1503_091026_6.json",
+      "seed_offset": 4866290347998669091,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        3,
+        19,
+        21,
+        33,
+        36,
+        41
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.6666666666666666,
+        "mean_baseline_hits": 0.9166666666666666,
+        "mean_difference": -0.25,
+        "seed_mean_min": 0.6666666666666666,
+        "seed_mean_max": 0.6666666666666666,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.6666666666666666
+        ],
+        "baseline_seed_means": [
+          0.9166666666666666
+        ]
+      }
+    },
+    {
+      "iteration": 7,
+      "file": "645/645_1503_091026/runs/645_1503_091026_7.json",
+      "seed_offset": 4866290347999669094,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        2,
+        3,
+        19,
+        21,
+        39,
+        43
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7666666666666667,
+        "mean_baseline_hits": 0.85,
+        "mean_difference": -0.08333333333333326,
+        "seed_mean_min": 0.7666666666666667,
+        "seed_mean_max": 0.7666666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.05,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7666666666666667
+        ],
+        "baseline_seed_means": [
+          0.85
+        ]
+      }
+    },
+    {
+      "iteration": 8,
+      "file": "645/645_1503_091026/runs/645_1503_091026_8.json",
+      "seed_offset": 4866290348000669097,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        7,
+        14,
+        15,
+        33,
+        43,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 1,
+        "mean_baseline_hits": 0.7166666666666667,
+        "mean_difference": 0.2833333333333333,
+        "seed_mean_min": 1,
+        "seed_mean_max": 1,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.05,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          1
+        ],
+        "baseline_seed_means": [
+          0.7166666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 9,
+      "file": "645/645_1503_091026/runs/645_1503_091026_9.json",
+      "seed_offset": 4866290348001669100,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        12,
+        13,
+        19,
+        29,
+        33,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.9166666666666666,
+        "mean_baseline_hits": 0.8833333333333333,
+        "mean_difference": 0.033333333333333326,
+        "seed_mean_min": 0.9166666666666666,
+        "seed_mean_max": 0.9166666666666666,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.05,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.9166666666666666
+        ],
+        "baseline_seed_means": [
+          0.8833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 10,
+      "file": "645/645_1503_091026/runs/645_1503_091026_10.json",
+      "seed_offset": 4866290348002669103,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        2,
+        7,
+        15,
+        22,
+        26,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.75,
+        "mean_baseline_hits": 0.8166666666666667,
+        "mean_difference": -0.06666666666666665,
+        "seed_mean_min": 0.75,
+        "seed_mean_max": 0.75,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.75
+        ],
+        "baseline_seed_means": [
+          0.8166666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 11,
+      "file": "645/645_1503_091026/runs/645_1503_091026_11.json",
+      "seed_offset": 4866290348003669106,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        7,
+        19,
+        23,
+        24,
+        37,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.6166666666666667,
+        "mean_baseline_hits": 0.6833333333333333,
+        "mean_difference": -0.06666666666666665,
+        "seed_mean_min": 0.6166666666666667,
+        "seed_mean_max": 0.6166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.6166666666666667
+        ],
+        "baseline_seed_means": [
+          0.6833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 12,
+      "file": "645/645_1503_091026/runs/645_1503_091026_12.json",
+      "seed_offset": 4866290348004669109,
+      "selected": {
+        "strategy": "simulate",
+        "window": 120
+      },
+      "suggested_numbers": [
+        2,
+        16,
+        22,
+        31,
+        36,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8,
+        "mean_baseline_hits": 0.7,
+        "mean_difference": 0.10000000000000009,
+        "seed_mean_min": 0.8,
+        "seed_mean_max": 0.8,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8
+        ],
+        "baseline_seed_means": [
+          0.7
+        ]
+      }
+    },
+    {
+      "iteration": 13,
+      "file": "645/645_1503_091026/runs/645_1503_091026_13.json",
+      "seed_offset": 4866290348005669112,
+      "selected": {
+        "strategy": "simulate",
+        "window": 120
+      },
+      "suggested_numbers": [
+        6,
+        15,
+        16,
+        31,
+        36,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.75,
+        "mean_baseline_hits": 0.6833333333333333,
+        "mean_difference": 0.06666666666666665,
+        "seed_mean_min": 0.75,
+        "seed_mean_max": 0.75,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.75
+        ],
+        "baseline_seed_means": [
+          0.6833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 14,
+      "file": "645/645_1503_091026/runs/645_1503_091026_14.json",
+      "seed_offset": 4866290348006669115,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        8,
+        12,
+        18,
+        21,
+        36,
+        39
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7666666666666667,
+        "mean_baseline_hits": 0.8333333333333334,
+        "mean_difference": -0.06666666666666665,
+        "seed_mean_min": 0.7666666666666667,
+        "seed_mean_max": 0.7666666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7666666666666667
+        ],
+        "baseline_seed_means": [
+          0.8333333333333334
+        ]
+      }
+    },
+    {
+      "iteration": 15,
+      "file": "645/645_1503_091026/runs/645_1503_091026_15.json",
+      "seed_offset": 4866290348007669118,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        4,
+        5,
+        13,
+        16,
+        28,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.75,
+        "mean_baseline_hits": 0.85,
+        "mean_difference": -0.09999999999999998,
+        "seed_mean_min": 0.75,
+        "seed_mean_max": 0.75,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.75
+        ],
+        "baseline_seed_means": [
+          0.85
+        ]
+      }
+    },
+    {
+      "iteration": 16,
+      "file": "645/645_1503_091026/runs/645_1503_091026_16.json",
+      "seed_offset": 4866290348008669121,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        10,
+        26,
+        31,
+        33,
+        36,
+        40
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7166666666666667,
+        "mean_baseline_hits": 0.6666666666666666,
+        "mean_difference": 0.050000000000000044,
+        "seed_mean_min": 0.7166666666666667,
+        "seed_mean_max": 0.7166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7166666666666667
+        ],
+        "baseline_seed_means": [
+          0.6666666666666666
+        ]
+      }
+    },
+    {
+      "iteration": 17,
+      "file": "645/645_1503_091026/runs/645_1503_091026_17.json",
+      "seed_offset": 4866290348009669124,
+      "selected": {
+        "strategy": "predict",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        7,
+        16,
+        35,
+        39
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7833333333333333,
+        "mean_baseline_hits": 0.7666666666666667,
+        "mean_difference": 0.016666666666666607,
+        "seed_mean_min": 0.7833333333333333,
+        "seed_mean_max": 0.7833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7833333333333333
+        ],
+        "baseline_seed_means": [
+          0.7666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 18,
+      "file": "645/645_1503_091026/runs/645_1503_091026_18.json",
+      "seed_offset": 4866290348010669127,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        4,
+        10,
+        20,
+        22,
+        30,
+        37
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7833333333333333,
+        "mean_baseline_hits": 0.9833333333333333,
+        "mean_difference": -0.19999999999999996,
+        "seed_mean_min": 0.7833333333333333,
+        "seed_mean_max": 0.7833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7833333333333333
+        ],
+        "baseline_seed_means": [
+          0.9833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 19,
+      "file": "645/645_1503_091026/runs/645_1503_091026_19.json",
+      "seed_offset": 4866290348011669130,
+      "selected": {
+        "strategy": "predict",
+        "window": 60
+      },
+      "suggested_numbers": [
+        6,
+        21,
+        29,
+        36,
+        41,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8166666666666667,
+        "mean_baseline_hits": 0.8666666666666667,
+        "mean_difference": -0.050000000000000044,
+        "seed_mean_min": 0.8166666666666667,
+        "seed_mean_max": 0.8166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.05,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8166666666666667
+        ],
+        "baseline_seed_means": [
+          0.8666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 20,
+      "file": "645/645_1503_091026/runs/645_1503_091026_20.json",
+      "seed_offset": 4866290348012669133,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        15,
+        24,
+        34,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8,
+        "mean_baseline_hits": 0.8833333333333333,
+        "mean_difference": -0.08333333333333326,
+        "seed_mean_min": 0.8,
+        "seed_mean_max": 0.8,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8
+        ],
+        "baseline_seed_means": [
+          0.8833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 21,
+      "file": "645/645_1503_091026/runs/645_1503_091026_21.json",
+      "seed_offset": 4866290348013669136,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        16,
+        27,
+        36,
+        41
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7833333333333333,
+        "mean_baseline_hits": 0.7333333333333333,
+        "mean_difference": 0.050000000000000044,
+        "seed_mean_min": 0.7833333333333333,
+        "seed_mean_max": 0.7833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7833333333333333
+        ],
+        "baseline_seed_means": [
+          0.7333333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 22,
+      "file": "645/645_1503_091026/runs/645_1503_091026_22.json",
+      "seed_offset": 4866290348014669139,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        9,
+        11,
+        12,
+        19,
+        32,
+        37
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7333333333333333,
+        "mean_baseline_hits": 0.7333333333333333,
+        "mean_difference": 0.0,
+        "seed_mean_min": 0.7333333333333333,
+        "seed_mean_max": 0.7333333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7333333333333333
+        ],
+        "baseline_seed_means": [
+          0.7333333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 23,
+      "file": "645/645_1503_091026/runs/645_1503_091026_23.json",
+      "seed_offset": 4866290348015669142,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        9,
+        16,
+        27,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8166666666666667,
+        "mean_baseline_hits": 0.6833333333333333,
+        "mean_difference": 0.1333333333333333,
+        "seed_mean_min": 0.8166666666666667,
+        "seed_mean_max": 0.8166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8166666666666667
+        ],
+        "baseline_seed_means": [
+          0.6833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 24,
+      "file": "645/645_1503_091026/runs/645_1503_091026_24.json",
+      "seed_offset": 4866290348016669145,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        1,
+        4,
+        13,
+        14,
+        39,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.9,
+        "mean_baseline_hits": 0.85,
+        "mean_difference": 0.050000000000000044,
+        "seed_mean_min": 0.9,
+        "seed_mean_max": 0.9,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.9
+        ],
+        "baseline_seed_means": [
+          0.85
+        ]
+      }
+    },
+    {
+      "iteration": 25,
+      "file": "645/645_1503_091026/runs/645_1503_091026_25.json",
+      "seed_offset": 4866290348017669148,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        1,
+        17,
+        28,
+        31,
+        33,
+        39
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7333333333333333,
+        "mean_baseline_hits": 0.8166666666666667,
+        "mean_difference": -0.08333333333333337,
+        "seed_mean_min": 0.7333333333333333,
+        "seed_mean_max": 0.7333333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7333333333333333
+        ],
+        "baseline_seed_means": [
+          0.8166666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 26,
+      "file": "645/645_1503_091026/runs/645_1503_091026_26.json",
+      "seed_offset": 4866290348018669151,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        5,
+        6,
+        7,
+        22,
+        24,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.6833333333333333,
+        "mean_baseline_hits": 0.7833333333333333,
+        "mean_difference": -0.09999999999999998,
+        "seed_mean_min": 0.6833333333333333,
+        "seed_mean_max": 0.6833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.6833333333333333
+        ],
+        "baseline_seed_means": [
+          0.7833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 27,
+      "file": "645/645_1503_091026/runs/645_1503_091026_27.json",
+      "seed_offset": 4866290348019669154,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        1,
+        10,
+        16,
+        21,
+        30,
+        31
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7166666666666667,
+        "mean_baseline_hits": 0.7666666666666667,
+        "mean_difference": -0.050000000000000044,
+        "seed_mean_min": 0.7166666666666667,
+        "seed_mean_max": 0.7166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7166666666666667
+        ],
+        "baseline_seed_means": [
+          0.7666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 28,
+      "file": "645/645_1503_091026/runs/645_1503_091026_28.json",
+      "seed_offset": 4866290348020669157,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        4,
+        14,
+        33,
+        36,
+        37,
+        40
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8,
+        "mean_baseline_hits": 0.8666666666666667,
+        "mean_difference": -0.06666666666666665,
+        "seed_mean_min": 0.8,
+        "seed_mean_max": 0.8,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8
+        ],
+        "baseline_seed_means": [
+          0.8666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 29,
+      "file": "645/645_1503_091026/runs/645_1503_091026_29.json",
+      "seed_offset": 4866290348021669160,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        13,
+        15,
+        34,
+        40,
+        41,
+        43
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.75,
+        "mean_baseline_hits": 0.7833333333333333,
+        "mean_difference": -0.033333333333333326,
+        "seed_mean_min": 0.75,
+        "seed_mean_max": 0.75,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.75
+        ],
+        "baseline_seed_means": [
+          0.7833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 30,
+      "file": "645/645_1503_091026/runs/645_1503_091026_30.json",
+      "seed_offset": 4866290348022669163,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        2,
+        22,
+        25,
+        30,
+        37,
+        39
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8,
+        "mean_baseline_hits": 0.85,
+        "mean_difference": -0.04999999999999993,
+        "seed_mean_min": 0.8,
+        "seed_mean_max": 0.8,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8
+        ],
+        "baseline_seed_means": [
+          0.85
+        ]
+      }
+    },
+    {
+      "iteration": 31,
+      "file": "645/645_1503_091026/runs/645_1503_091026_31.json",
+      "seed_offset": 4866290348023669166,
+      "selected": {
+        "strategy": "predict",
+        "window": 60
+      },
+      "suggested_numbers": [
+        4,
+        10,
+        15,
+        25,
+        29,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7166666666666667,
+        "mean_baseline_hits": 0.8166666666666667,
+        "mean_difference": -0.09999999999999998,
+        "seed_mean_min": 0.7166666666666667,
+        "seed_mean_max": 0.7166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7166666666666667
+        ],
+        "baseline_seed_means": [
+          0.8166666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 32,
+      "file": "645/645_1503_091026/runs/645_1503_091026_32.json",
+      "seed_offset": 4866290348024669169,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        12,
+        18,
+        19,
+        23,
+        41,
+        43
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.85,
+        "mean_baseline_hits": 0.8666666666666667,
+        "mean_difference": -0.01666666666666672,
+        "seed_mean_min": 0.85,
+        "seed_mean_max": 0.85,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.85
+        ],
+        "baseline_seed_means": [
+          0.8666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 33,
+      "file": "645/645_1503_091026/runs/645_1503_091026_33.json",
+      "seed_offset": 4866290348025669172,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        13,
+        19,
+        24,
+        28,
+        35,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.5166666666666667,
+        "mean_baseline_hits": 0.7833333333333333,
+        "mean_difference": -0.2666666666666666,
+        "seed_mean_min": 0.5166666666666667,
+        "seed_mean_max": 0.5166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.5166666666666667
+        ],
+        "baseline_seed_means": [
+          0.7833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 34,
+      "file": "645/645_1503_091026/runs/645_1503_091026_34.json",
+      "seed_offset": 4866290348026669175,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        7,
+        10,
+        19,
+        24,
+        31,
+        41
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.6833333333333333,
+        "mean_baseline_hits": 0.9333333333333333,
+        "mean_difference": -0.25,
+        "seed_mean_min": 0.6833333333333333,
+        "seed_mean_max": 0.6833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.6833333333333333
+        ],
+        "baseline_seed_means": [
+          0.9333333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 35,
+      "file": "645/645_1503_091026/runs/645_1503_091026_35.json",
+      "seed_offset": 4866290348027669178,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        6,
+        7,
+        10,
+        21,
+        28,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8333333333333334,
+        "mean_baseline_hits": 0.75,
+        "mean_difference": 0.08333333333333337,
+        "seed_mean_min": 0.8333333333333334,
+        "seed_mean_max": 0.8333333333333334,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8333333333333334
+        ],
+        "baseline_seed_means": [
+          0.75
+        ]
+      }
+    },
+    {
+      "iteration": 36,
+      "file": "645/645_1503_091026/runs/645_1503_091026_36.json",
+      "seed_offset": 4866290348028669181,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        2,
+        6,
+        23,
+        29,
+        34,
+        43
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.75,
+        "mean_baseline_hits": 0.7333333333333333,
+        "mean_difference": 0.01666666666666672,
+        "seed_mean_min": 0.75,
+        "seed_mean_max": 0.75,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.75
+        ],
+        "baseline_seed_means": [
+          0.7333333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 37,
+      "file": "645/645_1503_091026/runs/645_1503_091026_37.json",
+      "seed_offset": 4866290348029669184,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        3,
+        7,
+        13,
+        20,
+        25,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.85,
+        "mean_baseline_hits": 0.7333333333333333,
+        "mean_difference": 0.1166666666666667,
+        "seed_mean_min": 0.85,
+        "seed_mean_max": 0.85,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.85
+        ],
+        "baseline_seed_means": [
+          0.7333333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 38,
+      "file": "645/645_1503_091026/runs/645_1503_091026_38.json",
+      "seed_offset": 4866290348030669187,
+      "selected": {
+        "strategy": "simulate",
+        "window": 120
+      },
+      "suggested_numbers": [
+        2,
+        16,
+        20,
+        31,
+        36,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.85,
+        "mean_baseline_hits": 0.7666666666666667,
+        "mean_difference": 0.08333333333333326,
+        "seed_mean_min": 0.85,
+        "seed_mean_max": 0.85,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.85
+        ],
+        "baseline_seed_means": [
+          0.7666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 39,
+      "file": "645/645_1503_091026/runs/645_1503_091026_39.json",
+      "seed_offset": 4866290348031669190,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        3,
+        10,
+        15,
+        33,
+        35,
+        43
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.9333333333333333,
+        "mean_baseline_hits": 0.65,
+        "mean_difference": 0.2833333333333333,
+        "seed_mean_min": 0.9333333333333333,
+        "seed_mean_max": 0.9333333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.9333333333333333
+        ],
+        "baseline_seed_means": [
+          0.65
+        ]
+      }
+    },
+    {
+      "iteration": 40,
+      "file": "645/645_1503_091026/runs/645_1503_091026_40.json",
+      "seed_offset": 4866290348032669193,
+      "selected": {
+        "strategy": "predict",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        4,
+        7,
+        14,
+        15,
+        29
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.75,
+        "mean_baseline_hits": 0.8666666666666667,
+        "mean_difference": -0.1166666666666667,
+        "seed_mean_min": 0.75,
+        "seed_mean_max": 0.75,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.75
+        ],
+        "baseline_seed_means": [
+          0.8666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 41,
+      "file": "645/645_1503_091026/runs/645_1503_091026_41.json",
+      "seed_offset": 4866290348033669196,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        9,
+        16,
+        36,
+        41
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.65,
+        "mean_baseline_hits": 0.9333333333333333,
+        "mean_difference": -0.2833333333333333,
+        "seed_mean_min": 0.65,
+        "seed_mean_max": 0.65,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.65
+        ],
+        "baseline_seed_means": [
+          0.9333333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 42,
+      "file": "645/645_1503_091026/runs/645_1503_091026_42.json",
+      "seed_offset": 4866290348034669199,
+      "selected": {
+        "strategy": "simulate",
+        "window": 30
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        12,
+        15,
+        27,
+        33
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7,
+        "mean_baseline_hits": 0.6833333333333333,
+        "mean_difference": 0.016666666666666607,
+        "seed_mean_min": 0.7,
+        "seed_mean_max": 0.7,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7
+        ],
+        "baseline_seed_means": [
+          0.6833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 43,
+      "file": "645/645_1503_091026/runs/645_1503_091026_43.json",
+      "seed_offset": 4866290348035669202,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        2,
+        4,
+        5,
+        11,
+        12,
+        22
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8666666666666667,
+        "mean_baseline_hits": 0.9166666666666666,
+        "mean_difference": -0.04999999999999993,
+        "seed_mean_min": 0.8666666666666667,
+        "seed_mean_max": 0.8666666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.05,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8666666666666667
+        ],
+        "baseline_seed_means": [
+          0.9166666666666666
+        ]
+      }
+    },
+    {
+      "iteration": 44,
+      "file": "645/645_1503_091026/runs/645_1503_091026_44.json",
+      "seed_offset": 4866290348036669205,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        16,
+        27,
+        36,
+        41,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.6666666666666666,
+        "mean_baseline_hits": 0.8333333333333334,
+        "mean_difference": -0.16666666666666674,
+        "seed_mean_min": 0.6666666666666666,
+        "seed_mean_max": 0.6666666666666666,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.6666666666666666
+        ],
+        "baseline_seed_means": [
+          0.8333333333333334
+        ]
+      }
+    },
+    {
+      "iteration": 45,
+      "file": "645/645_1503_091026/runs/645_1503_091026_45.json",
+      "seed_offset": 4866290348037669208,
+      "selected": {
+        "strategy": "predict",
+        "window": 60
+      },
+      "suggested_numbers": [
+        16,
+        24,
+        28,
+        30,
+        32,
+        33
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8,
+        "mean_baseline_hits": 0.7833333333333333,
+        "mean_difference": 0.01666666666666672,
+        "seed_mean_min": 0.8,
+        "seed_mean_max": 0.8,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8
+        ],
+        "baseline_seed_means": [
+          0.7833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 46,
+      "file": "645/645_1503_091026/runs/645_1503_091026_46.json",
+      "seed_offset": 4866290348038669211,
+      "selected": {
+        "strategy": "simulate",
+        "window": 120
+      },
+      "suggested_numbers": [
+        2,
+        4,
+        16,
+        31,
+        36,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7666666666666667,
+        "mean_baseline_hits": 0.8,
+        "mean_difference": -0.033333333333333326,
+        "seed_mean_min": 0.7666666666666667,
+        "seed_mean_max": 0.7666666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7666666666666667
+        ],
+        "baseline_seed_means": [
+          0.8
+        ]
+      }
+    },
+    {
+      "iteration": 47,
+      "file": "645/645_1503_091026/runs/645_1503_091026_47.json",
+      "seed_offset": 4866290348039669214,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        7,
+        14,
+        16,
+        19,
+        20,
+        41
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.75,
+        "mean_baseline_hits": 0.8166666666666667,
+        "mean_difference": -0.06666666666666665,
+        "seed_mean_min": 0.75,
+        "seed_mean_max": 0.75,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.75
+        ],
+        "baseline_seed_means": [
+          0.8166666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 48,
+      "file": "645/645_1503_091026/runs/645_1503_091026_48.json",
+      "seed_offset": 4866290348040669217,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        9,
+        31,
+        36,
+        41
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7833333333333333,
+        "mean_baseline_hits": 0.7666666666666667,
+        "mean_difference": 0.016666666666666607,
+        "seed_mean_min": 0.7833333333333333,
+        "seed_mean_max": 0.7833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7833333333333333
+        ],
+        "baseline_seed_means": [
+          0.7666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 49,
+      "file": "645/645_1503_091026/runs/645_1503_091026_49.json",
+      "seed_offset": 4866290348041669220,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        6,
+        19,
+        22,
+        28,
+        37,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7333333333333333,
+        "mean_baseline_hits": 0.85,
+        "mean_difference": -0.1166666666666667,
+        "seed_mean_min": 0.7333333333333333,
+        "seed_mean_max": 0.7333333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7333333333333333
+        ],
+        "baseline_seed_means": [
+          0.85
+        ]
+      }
+    },
+    {
+      "iteration": 50,
+      "file": "645/645_1503_091026/runs/645_1503_091026_50.json",
+      "seed_offset": 4866290348042669223,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        2,
+        7,
+        11,
+        19,
+        24,
+        37
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7666666666666667,
+        "mean_baseline_hits": 0.65,
+        "mean_difference": 0.1166666666666667,
+        "seed_mean_min": 0.7666666666666667,
+        "seed_mean_max": 0.7666666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7666666666666667
+        ],
+        "baseline_seed_means": [
+          0.65
+        ]
+      }
+    },
+    {
+      "iteration": 51,
+      "file": "645/645_1503_091026/runs/645_1503_091026_51.json",
+      "seed_offset": 4866290348043669226,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        30,
+        35,
+        37,
+        39,
+        42,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8333333333333334,
+        "mean_baseline_hits": 0.5833333333333334,
+        "mean_difference": 0.25,
+        "seed_mean_min": 0.8333333333333334,
+        "seed_mean_max": 0.8333333333333334,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.05,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8333333333333334
+        ],
+        "baseline_seed_means": [
+          0.5833333333333334
+        ]
+      }
+    },
+    {
+      "iteration": 52,
+      "file": "645/645_1503_091026/runs/645_1503_091026_52.json",
+      "seed_offset": 4866290348044669229,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        1,
+        18,
+        24,
+        36,
+        37,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8166666666666667,
+        "mean_baseline_hits": 0.6166666666666667,
+        "mean_difference": 0.19999999999999996,
+        "seed_mean_min": 0.8166666666666667,
+        "seed_mean_max": 0.8166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8166666666666667
+        ],
+        "baseline_seed_means": [
+          0.6166666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 53,
+      "file": "645/645_1503_091026/runs/645_1503_091026_53.json",
+      "seed_offset": 4866290348045669232,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        16,
+        27,
+        36,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8333333333333334,
+        "mean_baseline_hits": 0.6833333333333333,
+        "mean_difference": 0.15000000000000002,
+        "seed_mean_min": 0.8333333333333334,
+        "seed_mean_max": 0.8333333333333334,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8333333333333334
+        ],
+        "baseline_seed_means": [
+          0.6833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 54,
+      "file": "645/645_1503_091026/runs/645_1503_091026_54.json",
+      "seed_offset": 4866290348046669235,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        25,
+        28,
+        29,
+        32,
+        34,
+        35
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7833333333333333,
+        "mean_baseline_hits": 0.7833333333333333,
+        "mean_difference": 0.0,
+        "seed_mean_min": 0.7833333333333333,
+        "seed_mean_max": 0.7833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7833333333333333
+        ],
+        "baseline_seed_means": [
+          0.7833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 55,
+      "file": "645/645_1503_091026/runs/645_1503_091026_55.json",
+      "seed_offset": 4866290348047669238,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        1,
+        7,
+        8,
+        27,
+        37,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.5666666666666667,
+        "mean_baseline_hits": 0.7,
+        "mean_difference": -0.1333333333333333,
+        "seed_mean_min": 0.5666666666666667,
+        "seed_mean_max": 0.5666666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.5666666666666667
+        ],
+        "baseline_seed_means": [
+          0.7
+        ]
+      }
+    },
+    {
+      "iteration": 56,
+      "file": "645/645_1503_091026/runs/645_1503_091026_56.json",
+      "seed_offset": 4866290348048669241,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        16,
+        27,
+        36,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8333333333333334,
+        "mean_baseline_hits": 1.0166666666666666,
+        "mean_difference": -0.18333333333333324,
+        "seed_mean_min": 0.8333333333333334,
+        "seed_mean_max": 0.8333333333333334,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8333333333333334
+        ],
+        "baseline_seed_means": [
+          1.0166666666666666
+        ]
+      }
+    },
+    {
+      "iteration": 57,
+      "file": "645/645_1503_091026/runs/645_1503_091026_57.json",
+      "seed_offset": 4866290348049669244,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        2,
+        12,
+        15,
+        17,
+        37,
+        38
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7833333333333333,
+        "mean_baseline_hits": 0.9,
+        "mean_difference": -0.1166666666666667,
+        "seed_mean_min": 0.7833333333333333,
+        "seed_mean_max": 0.7833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7833333333333333
+        ],
+        "baseline_seed_means": [
+          0.9
+        ]
+      }
+    },
+    {
+      "iteration": 58,
+      "file": "645/645_1503_091026/runs/645_1503_091026_58.json",
+      "seed_offset": 4866290348050669247,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        9,
+        16,
+        27,
+        41
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8,
+        "mean_baseline_hits": 0.7,
+        "mean_difference": 0.10000000000000009,
+        "seed_mean_min": 0.8,
+        "seed_mean_max": 0.8,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8
+        ],
+        "baseline_seed_means": [
+          0.7
+        ]
+      }
+    },
+    {
+      "iteration": 59,
+      "file": "645/645_1503_091026/runs/645_1503_091026_59.json",
+      "seed_offset": 4866290348051669250,
+      "selected": {
+        "strategy": "predict",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        16,
+        22,
+        31,
+        33,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.75,
+        "mean_baseline_hits": 0.8333333333333334,
+        "mean_difference": -0.08333333333333337,
+        "seed_mean_min": 0.75,
+        "seed_mean_max": 0.75,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.75
+        ],
+        "baseline_seed_means": [
+          0.8333333333333334
+        ]
+      }
+    },
+    {
+      "iteration": 60,
+      "file": "645/645_1503_091026/runs/645_1503_091026_60.json",
+      "seed_offset": 4866290348052669253,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        6,
+        10,
+        19,
+        23,
+        30,
+        42
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.65,
+        "mean_baseline_hits": 1.1333333333333333,
+        "mean_difference": -0.4833333333333333,
+        "seed_mean_min": 0.65,
+        "seed_mean_max": 0.65,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.65
+        ],
+        "baseline_seed_means": [
+          1.1333333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 61,
+      "file": "645/645_1503_091026/runs/645_1503_091026_61.json",
+      "seed_offset": 4866290348053669256,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        13,
+        16,
+        23,
+        29,
+        37,
+        41
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7,
+        "mean_baseline_hits": 0.8333333333333334,
+        "mean_difference": -0.13333333333333341,
+        "seed_mean_min": 0.7,
+        "seed_mean_max": 0.7,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7
+        ],
+        "baseline_seed_means": [
+          0.8333333333333334
+        ]
+      }
+    },
+    {
+      "iteration": 62,
+      "file": "645/645_1503_091026/runs/645_1503_091026_62.json",
+      "seed_offset": 4866290348054669259,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        16,
+        27,
+        31,
+        36,
+        41
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7833333333333333,
+        "mean_baseline_hits": 0.7833333333333333,
+        "mean_difference": 0.0,
+        "seed_mean_min": 0.7833333333333333,
+        "seed_mean_max": 0.7833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7833333333333333
+        ],
+        "baseline_seed_means": [
+          0.7833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 63,
+      "file": "645/645_1503_091026/runs/645_1503_091026_63.json",
+      "seed_offset": 4866290348055669262,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        9,
+        15,
+        27,
+        29,
+        36,
+        38
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.95,
+        "mean_baseline_hits": 0.7666666666666667,
+        "mean_difference": 0.18333333333333324,
+        "seed_mean_min": 0.95,
+        "seed_mean_max": 0.95,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.95
+        ],
+        "baseline_seed_means": [
+          0.7666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 64,
+      "file": "645/645_1503_091026/runs/645_1503_091026_64.json",
+      "seed_offset": 4866290348056669265,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        16,
+        27,
+        31,
+        36,
+        41
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7666666666666667,
+        "mean_baseline_hits": 0.7666666666666667,
+        "mean_difference": 0.0,
+        "seed_mean_min": 0.7666666666666667,
+        "seed_mean_max": 0.7666666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7666666666666667
+        ],
+        "baseline_seed_means": [
+          0.7666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 65,
+      "file": "645/645_1503_091026/runs/645_1503_091026_65.json",
+      "seed_offset": 4866290348057669268,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        5,
+        15,
+        16,
+        30,
+        33,
+        42
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8166666666666667,
+        "mean_baseline_hits": 0.8833333333333333,
+        "mean_difference": -0.06666666666666665,
+        "seed_mean_min": 0.8166666666666667,
+        "seed_mean_max": 0.8166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8166666666666667
+        ],
+        "baseline_seed_means": [
+          0.8833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 66,
+      "file": "645/645_1503_091026/runs/645_1503_091026_66.json",
+      "seed_offset": 4866290348058669271,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        16,
+        27,
+        31,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7833333333333333,
+        "mean_baseline_hits": 0.8166666666666667,
+        "mean_difference": -0.033333333333333326,
+        "seed_mean_min": 0.7833333333333333,
+        "seed_mean_max": 0.7833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7833333333333333
+        ],
+        "baseline_seed_means": [
+          0.8166666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 67,
+      "file": "645/645_1503_091026/runs/645_1503_091026_67.json",
+      "seed_offset": 4866290348059669274,
+      "selected": {
+        "strategy": "predict",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        19,
+        20,
+        21,
+        25,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.9,
+        "mean_baseline_hits": 1,
+        "mean_difference": -0.09999999999999998,
+        "seed_mean_min": 0.9,
+        "seed_mean_max": 0.9,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.9
+        ],
+        "baseline_seed_means": [
+          1
+        ]
+      }
+    },
+    {
+      "iteration": 68,
+      "file": "645/645_1503_091026/runs/645_1503_091026_68.json",
+      "seed_offset": 4866290348060669277,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        7,
+        9,
+        20,
+        23,
+        37,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8,
+        "mean_baseline_hits": 0.8,
+        "mean_difference": 0.0,
+        "seed_mean_min": 0.8,
+        "seed_mean_max": 0.8,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8
+        ],
+        "baseline_seed_means": [
+          0.8
+        ]
+      }
+    },
+    {
+      "iteration": 69,
+      "file": "645/645_1503_091026/runs/645_1503_091026_69.json",
+      "seed_offset": 4866290348061669280,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        1,
+        19,
+        27,
+        28,
+        30,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7,
+        "mean_baseline_hits": 0.8,
+        "mean_difference": -0.10000000000000009,
+        "seed_mean_min": 0.7,
+        "seed_mean_max": 0.7,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7
+        ],
+        "baseline_seed_means": [
+          0.8
+        ]
+      }
+    },
+    {
+      "iteration": 70,
+      "file": "645/645_1503_091026/runs/645_1503_091026_70.json",
+      "seed_offset": 4866290348062669283,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        2,
+        12,
+        13,
+        22,
+        25,
+        38
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7666666666666667,
+        "mean_baseline_hits": 0.85,
+        "mean_difference": -0.08333333333333326,
+        "seed_mean_min": 0.7666666666666667,
+        "seed_mean_max": 0.7666666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7666666666666667
+        ],
+        "baseline_seed_means": [
+          0.85
+        ]
+      }
+    },
+    {
+      "iteration": 71,
+      "file": "645/645_1503_091026/runs/645_1503_091026_71.json",
+      "seed_offset": 4866290348063669286,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        9,
+        16,
+        27,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7666666666666667,
+        "mean_baseline_hits": 0.8666666666666667,
+        "mean_difference": -0.09999999999999998,
+        "seed_mean_min": 0.7666666666666667,
+        "seed_mean_max": 0.7666666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7666666666666667
+        ],
+        "baseline_seed_means": [
+          0.8666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 72,
+      "file": "645/645_1503_091026/runs/645_1503_091026_72.json",
+      "seed_offset": 4866290348064669289,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        6,
+        15,
+        17,
+        24,
+        33,
+        38
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.5333333333333333,
+        "mean_baseline_hits": 0.6333333333333333,
+        "mean_difference": -0.09999999999999998,
+        "seed_mean_min": 0.5333333333333333,
+        "seed_mean_max": 0.5333333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.5333333333333333
+        ],
+        "baseline_seed_means": [
+          0.6333333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 73,
+      "file": "645/645_1503_091026/runs/645_1503_091026_73.json",
+      "seed_offset": 4866290348065669292,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        8,
+        11,
+        16,
+        37,
+        40,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7166666666666667,
+        "mean_baseline_hits": 0.9333333333333333,
+        "mean_difference": -0.21666666666666667,
+        "seed_mean_min": 0.7166666666666667,
+        "seed_mean_max": 0.7166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7166666666666667
+        ],
+        "baseline_seed_means": [
+          0.9333333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 74,
+      "file": "645/645_1503_091026/runs/645_1503_091026_74.json",
+      "seed_offset": 4866290348066669295,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        4,
+        7,
+        18,
+        26,
+        27,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.5833333333333334,
+        "mean_baseline_hits": 0.8666666666666667,
+        "mean_difference": -0.2833333333333333,
+        "seed_mean_min": 0.5833333333333334,
+        "seed_mean_max": 0.5833333333333334,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.5833333333333334
+        ],
+        "baseline_seed_means": [
+          0.8666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 75,
+      "file": "645/645_1503_091026/runs/645_1503_091026_75.json",
+      "seed_offset": 4866290348067669298,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        9,
+        16,
+        27,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7333333333333333,
+        "mean_baseline_hits": 0.6833333333333333,
+        "mean_difference": 0.04999999999999993,
+        "seed_mean_min": 0.7333333333333333,
+        "seed_mean_max": 0.7333333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7333333333333333
+        ],
+        "baseline_seed_means": [
+          0.6833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 76,
+      "file": "645/645_1503_091026/runs/645_1503_091026_76.json",
+      "seed_offset": 4866290348068669301,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        7,
+        16,
+        17,
+        28,
+        32,
+        35
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.75,
+        "mean_baseline_hits": 0.85,
+        "mean_difference": -0.09999999999999998,
+        "seed_mean_min": 0.75,
+        "seed_mean_max": 0.75,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.75
+        ],
+        "baseline_seed_means": [
+          0.85
+        ]
+      }
+    },
+    {
+      "iteration": 77,
+      "file": "645/645_1503_091026/runs/645_1503_091026_77.json",
+      "seed_offset": 4866290348069669304,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        8,
+        20,
+        25,
+        29,
+        32,
+        39
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7166666666666667,
+        "mean_baseline_hits": 0.6833333333333333,
+        "mean_difference": 0.033333333333333326,
+        "seed_mean_min": 0.7166666666666667,
+        "seed_mean_max": 0.7166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7166666666666667
+        ],
+        "baseline_seed_means": [
+          0.6833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 78,
+      "file": "645/645_1503_091026/runs/645_1503_091026_78.json",
+      "seed_offset": 4866290348070669307,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        7,
+        9,
+        21,
+        38,
+        42,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.6666666666666666,
+        "mean_baseline_hits": 0.85,
+        "mean_difference": -0.18333333333333335,
+        "seed_mean_min": 0.6666666666666666,
+        "seed_mean_max": 0.6666666666666666,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.6666666666666666
+        ],
+        "baseline_seed_means": [
+          0.85
+        ]
+      }
+    },
+    {
+      "iteration": 79,
+      "file": "645/645_1503_091026/runs/645_1503_091026_79.json",
+      "seed_offset": 4866290348071669310,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        9,
+        16,
+        31,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.6833333333333333,
+        "mean_baseline_hits": 0.85,
+        "mean_difference": -0.16666666666666663,
+        "seed_mean_min": 0.6833333333333333,
+        "seed_mean_max": 0.6833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.6833333333333333
+        ],
+        "baseline_seed_means": [
+          0.85
+        ]
+      }
+    },
+    {
+      "iteration": 80,
+      "file": "645/645_1503_091026/runs/645_1503_091026_80.json",
+      "seed_offset": 4866290348072669313,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        2,
+        4,
+        11,
+        19,
+        28,
+        31
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.85,
+        "mean_baseline_hits": 0.7833333333333333,
+        "mean_difference": 0.06666666666666665,
+        "seed_mean_min": 0.85,
+        "seed_mean_max": 0.85,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.85
+        ],
+        "baseline_seed_means": [
+          0.7833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 81,
+      "file": "645/645_1503_091026/runs/645_1503_091026_81.json",
+      "seed_offset": 4866290348073669316,
+      "selected": {
+        "strategy": "simulate",
+        "window": 120
+      },
+      "suggested_numbers": [
+        2,
+        6,
+        16,
+        31,
+        36,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7166666666666667,
+        "mean_baseline_hits": 0.7,
+        "mean_difference": 0.01666666666666672,
+        "seed_mean_min": 0.7166666666666667,
+        "seed_mean_max": 0.7166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7166666666666667
+        ],
+        "baseline_seed_means": [
+          0.7
+        ]
+      }
+    },
+    {
+      "iteration": 82,
+      "file": "645/645_1503_091026/runs/645_1503_091026_82.json",
+      "seed_offset": 4866290348074669319,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        4,
+        10,
+        16,
+        22,
+        41,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.5,
+        "mean_baseline_hits": 0.8166666666666667,
+        "mean_difference": -0.31666666666666665,
+        "seed_mean_min": 0.5,
+        "seed_mean_max": 0.5,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.5
+        ],
+        "baseline_seed_means": [
+          0.8166666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 83,
+      "file": "645/645_1503_091026/runs/645_1503_091026_83.json",
+      "seed_offset": 4866290348075669322,
+      "selected": {
+        "strategy": "predict",
+        "window": 60
+      },
+      "suggested_numbers": [
+        10,
+        11,
+        12,
+        15,
+        33,
+        43
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.75,
+        "mean_baseline_hits": 0.7666666666666667,
+        "mean_difference": -0.01666666666666672,
+        "seed_mean_min": 0.75,
+        "seed_mean_max": 0.75,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.75
+        ],
+        "baseline_seed_means": [
+          0.7666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 84,
+      "file": "645/645_1503_091026/runs/645_1503_091026_84.json",
+      "seed_offset": 4866290348076669325,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        3,
+        22,
+        38,
+        42,
+        43,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.9,
+        "mean_baseline_hits": 0.7666666666666667,
+        "mean_difference": 0.1333333333333333,
+        "seed_mean_min": 0.9,
+        "seed_mean_max": 0.9,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.05,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.9
+        ],
+        "baseline_seed_means": [
+          0.7666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 85,
+      "file": "645/645_1503_091026/runs/645_1503_091026_85.json",
+      "seed_offset": 4866290348077669328,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        11,
+        21,
+        26,
+        28,
+        36,
+        40
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.6833333333333333,
+        "mean_baseline_hits": 0.5833333333333334,
+        "mean_difference": 0.09999999999999998,
+        "seed_mean_min": 0.6833333333333333,
+        "seed_mean_max": 0.6833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.6833333333333333
+        ],
+        "baseline_seed_means": [
+          0.5833333333333334
+        ]
+      }
+    },
+    {
+      "iteration": 86,
+      "file": "645/645_1503_091026/runs/645_1503_091026_86.json",
+      "seed_offset": 4866290348078669331,
+      "selected": {
+        "strategy": "predict",
+        "window": 60
+      },
+      "suggested_numbers": [
+        2,
+        11,
+        15,
+        36,
+        39,
+        41
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.9666666666666667,
+        "mean_baseline_hits": 0.6666666666666666,
+        "mean_difference": 0.30000000000000004,
+        "seed_mean_min": 0.9666666666666667,
+        "seed_mean_max": 0.9666666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.08333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.9666666666666667
+        ],
+        "baseline_seed_means": [
+          0.6666666666666666
+        ]
+      }
+    },
+    {
+      "iteration": 87,
+      "file": "645/645_1503_091026/runs/645_1503_091026_87.json",
+      "seed_offset": 4866290348079669334,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        12,
+        16,
+        23,
+        24,
+        40,
+        42
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7333333333333333,
+        "mean_baseline_hits": 0.8,
+        "mean_difference": -0.06666666666666676,
+        "seed_mean_min": 0.7333333333333333,
+        "seed_mean_max": 0.7333333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7333333333333333
+        ],
+        "baseline_seed_means": [
+          0.8
+        ]
+      }
+    },
+    {
+      "iteration": 88,
+      "file": "645/645_1503_091026/runs/645_1503_091026_88.json",
+      "seed_offset": 4866290348080669337,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        16,
+        27,
+        36,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8166666666666667,
+        "mean_baseline_hits": 0.7166666666666667,
+        "mean_difference": 0.09999999999999998,
+        "seed_mean_min": 0.8166666666666667,
+        "seed_mean_max": 0.8166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8166666666666667
+        ],
+        "baseline_seed_means": [
+          0.7166666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 89,
+      "file": "645/645_1503_091026/runs/645_1503_091026_89.json",
+      "seed_offset": 4866290348081669340,
+      "selected": {
+        "strategy": "simulate",
+        "window": 120
+      },
+      "suggested_numbers": [
+        16,
+        20,
+        22,
+        31,
+        33,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.85,
+        "mean_baseline_hits": 0.9833333333333333,
+        "mean_difference": -0.1333333333333333,
+        "seed_mean_min": 0.85,
+        "seed_mean_max": 0.85,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.85
+        ],
+        "baseline_seed_means": [
+          0.9833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 90,
+      "file": "645/645_1503_091026/runs/645_1503_091026_90.json",
+      "seed_offset": 4866290348082669343,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        9,
+        15,
+        18,
+        23,
+        27,
+        32
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.6666666666666666,
+        "mean_baseline_hits": 0.8833333333333333,
+        "mean_difference": -0.21666666666666667,
+        "seed_mean_min": 0.6666666666666666,
+        "seed_mean_max": 0.6666666666666666,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.6666666666666666
+        ],
+        "baseline_seed_means": [
+          0.8833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 91,
+      "file": "645/645_1503_091026/runs/645_1503_091026_91.json",
+      "seed_offset": 4866290348083669346,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        1,
+        13,
+        25,
+        28,
+        41,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.6166666666666667,
+        "mean_baseline_hits": 1.1666666666666667,
+        "mean_difference": -0.55,
+        "seed_mean_min": 0.6166666666666667,
+        "seed_mean_max": 0.6166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.6166666666666667
+        ],
+        "baseline_seed_means": [
+          1.1666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 92,
+      "file": "645/645_1503_091026/runs/645_1503_091026_92.json",
+      "seed_offset": 4866290348084669349,
+      "selected": {
+        "strategy": "simulate",
+        "window": 60
+      },
+      "suggested_numbers": [
+        3,
+        6,
+        16,
+        31,
+        36,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7333333333333333,
+        "mean_baseline_hits": 0.7833333333333333,
+        "mean_difference": -0.050000000000000044,
+        "seed_mean_min": 0.7333333333333333,
+        "seed_mean_max": 0.7333333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7333333333333333
+        ],
+        "baseline_seed_means": [
+          0.7833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 93,
+      "file": "645/645_1503_091026/runs/645_1503_091026_93.json",
+      "seed_offset": 4866290348085669352,
+      "selected": {
+        "strategy": "predict",
+        "window": 0
+      },
+      "suggested_numbers": [
+        6,
+        12,
+        14,
+        20,
+        28,
+        37
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7833333333333333,
+        "mean_baseline_hits": 0.6666666666666666,
+        "mean_difference": 0.1166666666666667,
+        "seed_mean_min": 0.7833333333333333,
+        "seed_mean_max": 0.7833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7833333333333333
+        ],
+        "baseline_seed_means": [
+          0.6666666666666666
+        ]
+      }
+    },
+    {
+      "iteration": 94,
+      "file": "645/645_1503_091026/runs/645_1503_091026_94.json",
+      "seed_offset": 4866290348086669355,
+      "selected": {
+        "strategy": "simulate",
+        "window": 120
+      },
+      "suggested_numbers": [
+        2,
+        16,
+        22,
+        31,
+        36,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8166666666666667,
+        "mean_baseline_hits": 0.9833333333333333,
+        "mean_difference": -0.16666666666666663,
+        "seed_mean_min": 0.8166666666666667,
+        "seed_mean_max": 0.8166666666666667,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8166666666666667
+        ],
+        "baseline_seed_means": [
+          0.9833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 95,
+      "file": "645/645_1503_091026/runs/645_1503_091026_95.json",
+      "seed_offset": 4866290348087669358,
+      "selected": {
+        "strategy": "predict",
+        "window": 60
+      },
+      "suggested_numbers": [
+        9,
+        15,
+        19,
+        30,
+        38,
+        39
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8833333333333333,
+        "mean_baseline_hits": 0.55,
+        "mean_difference": 0.33333333333333326,
+        "seed_mean_min": 0.8833333333333333,
+        "seed_mean_max": 0.8833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.06666666666666667,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8833333333333333
+        ],
+        "baseline_seed_means": [
+          0.55
+        ]
+      }
+    },
+    {
+      "iteration": 96,
+      "file": "645/645_1503_091026/runs/645_1503_091026_96.json",
+      "seed_offset": 4866290348088669361,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        1,
+        25,
+        28,
+        29,
+        36,
+        43
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8333333333333334,
+        "mean_baseline_hits": 0.8,
+        "mean_difference": 0.033333333333333326,
+        "seed_mean_min": 0.8333333333333334,
+        "seed_mean_max": 0.8333333333333334,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8333333333333334
+        ],
+        "baseline_seed_means": [
+          0.8
+        ]
+      }
+    },
+    {
+      "iteration": 97,
+      "file": "645/645_1503_091026/runs/645_1503_091026_97.json",
+      "seed_offset": 4866290348089669364,
+      "selected": {
+        "strategy": "predict",
+        "window": 60
+      },
+      "suggested_numbers": [
+        19,
+        21,
+        25,
+        32,
+        41,
+        44
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.8333333333333334,
+        "mean_baseline_hits": 0.8833333333333333,
+        "mean_difference": -0.04999999999999993,
+        "seed_mean_min": 0.8333333333333334,
+        "seed_mean_max": 0.8333333333333334,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.03333333333333333,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.8333333333333334
+        ],
+        "baseline_seed_means": [
+          0.8833333333333333
+        ]
+      }
+    },
+    {
+      "iteration": 98,
+      "file": "645/645_1503_091026/runs/645_1503_091026_98.json",
+      "seed_offset": 4866290348090669367,
+      "selected": {
+        "strategy": "simulate",
+        "window": 0
+      },
+      "suggested_numbers": [
+        10,
+        20,
+        22,
+        24,
+        31,
+        37
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.5333333333333333,
+        "mean_baseline_hits": 0.75,
+        "mean_difference": -0.21666666666666667,
+        "seed_mean_min": 0.5333333333333333,
+        "seed_mean_max": 0.5333333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.5333333333333333
+        ],
+        "baseline_seed_means": [
+          0.75
+        ]
+      }
+    },
+    {
+      "iteration": 99,
+      "file": "645/645_1503_091026/runs/645_1503_091026_99.json",
+      "seed_offset": 4866290348091669370,
+      "selected": {
+        "strategy": "predict",
+        "window": 30
+      },
+      "suggested_numbers": [
+        4,
+        13,
+        33,
+        38,
+        43,
+        45
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.6833333333333333,
+        "mean_baseline_hits": 0.8666666666666667,
+        "mean_difference": -0.18333333333333335,
+        "seed_mean_min": 0.6833333333333333,
+        "seed_mean_max": 0.6833333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.0,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.6833333333333333
+        ],
+        "baseline_seed_means": [
+          0.8666666666666667
+        ]
+      }
+    },
+    {
+      "iteration": 100,
+      "file": "645/645_1503_091026/runs/645_1503_091026_100.json",
+      "seed_offset": 4866290348092669373,
+      "selected": {
+        "strategy": "predict",
+        "window": 120
+      },
+      "suggested_numbers": [
+        2,
+        12,
+        22,
+        23,
+        35,
+        36
+      ],
+      "holdout_summary": {
+        "targets_per_seed": 60,
+        "seed_runs": 1,
+        "mean_main_hits": 0.7333333333333333,
+        "mean_baseline_hits": 0.7333333333333333,
+        "mean_difference": 0.0,
+        "seed_mean_min": 0.7333333333333333,
+        "seed_mean_max": 0.7333333333333333,
+        "uniform_expected_main_hits": 0.8,
+        "at_least_3_main_rate": 0.016666666666666666,
+        "bonus_match_rate": null,
+        "baseline_bonus_match_rate": null,
+        "seed_means": [
+          0.7333333333333333
+        ],
+        "baseline_seed_means": [
+          0.7333333333333333
+        ]
+      }
+    }
+  ]
+}

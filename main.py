@@ -4,12 +4,26 @@ import argparse, csv, json, sqlite3
 from collections import Counter
 from itertools import combinations
 from dataclasses import dataclass
+from functools import lru_cache
 MASK32=(1<<32)-1; MASK64=(1<<64)-1
 PRODUCTS={'535':(35,5,12),'645':(45,6,None),'655':(55,6,55)}
 BACKTEST_SEED=0x00c0ffee12345677
 BASELINE_SEED=0x175efdd434567869
 
 def rol32(x,n): return ((x<<n)|(x>>(32-n))) & MASK32
+
+@lru_cache(maxsize=16384)
+def _chacha8_block(key, counter):
+    initial=[0x61707865,0x3320646e,0x79622d32,0x6b206574]+list(key)+[counter&MASK32,counter>>32,0,0]
+    x=initial.copy()
+    def qr(a,b,c,d):
+        x[a]=(x[a]+x[b])&MASK32; x[d]=rol32(x[d]^x[a],16)
+        x[c]=(x[c]+x[d])&MASK32; x[b]=rol32(x[b]^x[c],12)
+        x[a]=(x[a]+x[b])&MASK32; x[d]=rol32(x[d]^x[a],8)
+        x[c]=(x[c]+x[d])&MASK32; x[b]=rol32(x[b]^x[c],7)
+    for _ in range(4):
+        for indices in [(0,4,8,12),(1,5,9,13),(2,6,10,14),(3,7,11,15),(0,5,10,15),(1,6,11,12),(2,7,8,13),(3,4,9,14)]: qr(*indices)
+    return tuple((a+b)&MASK32 for a,b in zip(x,initial))
 
 class ChaCha8:
     """rand_core seed_from_u64 PCG expansion + 64-bit counter ChaCha8 stream."""
@@ -21,17 +35,9 @@ class ChaCha8:
             self.key.append(((x>>r)|(x<<((-r)&31)))&MASK32)
         self.counter=0; self.buf=[]; self.pos=0
     def block(self):
-        initial=[0x61707865,0x3320646e,0x79622d32,0x6b206574]+self.key+[self.counter&MASK32,self.counter>>32,0,0]
-        x=initial.copy()
-        def qr(a,b,c,d):
-            x[a]=(x[a]+x[b])&MASK32; x[d]=rol32(x[d]^x[a],16)
-            x[c]=(x[c]+x[d])&MASK32; x[b]=rol32(x[b]^x[c],12)
-            x[a]=(x[a]+x[b])&MASK32; x[d]=rol32(x[d]^x[a],8)
-            x[c]=(x[c]+x[d])&MASK32; x[b]=rol32(x[b]^x[c],7)
-        for _ in range(4):
-            for indices in [(0,4,8,12),(1,5,9,13),(2,6,10,14),(3,7,11,15),(0,5,10,15),(1,6,11,12),(2,7,8,13),(3,4,9,14)]: qr(*indices)
+        result=_chacha8_block(tuple(self.key),self.counter)
         self.counter=(self.counter+1)&MASK64
-        return [(a+b)&MASK32 for a,b in zip(x,initial)]
+        return list(result)
     def u32(self):
         if self.pos==len(self.buf):
             self.buf=sum((self.block() for _ in range(4)),[]); self.pos=0

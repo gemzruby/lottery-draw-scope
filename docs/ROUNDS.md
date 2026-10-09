@@ -4,7 +4,7 @@
 make round PRODUCT=645 SAMPLES=1000 WORKERS=2
 ```
 
-One round runs ten numbered iterations for a single product. `make evaluate`
+One round runs ten numbered iterations by default (`RUNS` changes the count) for a single product. `make evaluate`
 is an alias for `make round`. Use `PRODUCT=535` or `PRODUCT=655` for another
 product. `WORKERS` defaults to 2 and accepts 1 through 4. The base seed is derived
 from the round ID by default, so a new round gets a new seed sequence. Set
@@ -16,10 +16,10 @@ All files share the start time of the round in Asia/Ho_Chi_Minh. For a round
 started at 14:25 on 9 October 2026:
 
 ```text
-backtests/645_1425_091026_1.json
-backtests/645_1425_091026_2.json
+backtests/645/645_1425_091026/runs/645_1425_091026_1.json
+backtests/645/645_1425_091026/runs/645_1425_091026_2.json
 ...
-backtests/645_1425_091026_10.json
+backtests/645/645_1425_091026/runs/645_1425_091026_10.json
 backtests/suggestions/645_1425_091026.json
 ```
 
@@ -42,7 +42,7 @@ history. Recommendation generation has a separate recorded seed.
 
 ## Summary
 
-The suggestion file is written only after all ten iterations finish. It contains
+The final suggestion file is written only after all requested iterations finish. It contains
 source filenames, seeds, configurations, holdout metrics, number rankings, and
 two distinct consensus combinations. Main counts measure appearances in the ten
 per-run suggestions. The first combination takes the six highest-ranked main
@@ -56,5 +56,9 @@ All iterations reuse the same historical outcomes. Results remain exploratory.
 
 Raw CSVs are not rewritten. Dataset hashes must stay fixed throughout the round.
 If an iteration fails, completed files are kept and no round summary is written.
-A new round should use a new minute. The latest Markdown report is stored in
+Use `RESUME=<round_id>` with matching parameters to continue an interrupted round.
+New rounds use a new minute. Completed runs are not recomputed. The latest Markdown report is stored in
 `docs/EVALUATION.md`.
+
+For a nested 10/30/100-run comparison, use `make stability PRODUCT=645 WORKERS=4`.
+See [STABILITY.md](STABILITY.md) for checkpoint metrics and the full directory layout.

@@ -145,9 +145,9 @@ Holdout scores are reported but never used to select or weight suggestions.
 Files use the round start time in Asia/Ho_Chi_Minh:
 
 ```text
-backtests/645_1425_091026_1.json
+backtests/645/645_1425_091026/runs/645_1425_091026_1.json
 ...
-backtests/645_1425_091026_10.json
+backtests/645/645_1425_091026/runs/645_1425_091026_10.json
 backtests/suggestions/645_1425_091026.json
 ```
 
@@ -172,3 +172,14 @@ handling, attempt limits, and exclusion of future draws. Ticket-by-ticket
 compatibility with the original application has not been verified. History
 windows, default bonus pools, and draw-code handling describe this project's
 behavior. Server algorithms are outside its scope.
+
+## Sampling stability
+
+`make stability PRODUCT=645 WORKERS=4` evaluates nested 10-, 30-, and 100-run
+checkpoints on a fixed dataset. Earlier iterations are reused, and comparisons
+report consensus changes, configuration counts, seed spread, and mean matches.
+Results live in each product/round directory. See [STABILITY.md](STABILITY.md).
+
+ChaCha8 block outputs are cached by immutable key and counter, with a maximum
+of 16,384 entries per process. Cache hits preserve counter advancement and word
+consumption; returned block lists cannot mutate cached tuples.
