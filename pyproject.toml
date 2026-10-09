@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lottery-draw-scope"
+version = "0.1.0"
+description = "Weighted lottery ticket generation, statistics, and backtesting"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+drawscope = "main:main"
+
+[tool.setuptools]
+py-modules = ["main"]
