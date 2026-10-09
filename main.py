@@ -109,6 +109,34 @@ def predict(draws,product,seed,tickets=1,bonus_pool=None):
             if len(out)>=tickets: break
     return out
 
+def simulate(draws, product, seed, samples=1000, bonus_pool=None):
+    """Rank numbers from one ticket per seed; repeated tickets count as samples."""
+    if not isinstance(samples, int) or isinstance(samples, bool) or samples < 1:
+        raise ValueError('samples must be a positive integer')
+    maximum, k, bonus_max = PRODUCTS[product]
+    main_counts, bonus_counts = Counter(), Counter()
+    seed &= MASK64
+    pool = list(bonus_pool) if bonus_pool is not None else None
+    for i in range(samples):
+        ticket = predict(draws, product, (seed + i) & MASK64, 1, pool)[0]['numbers']
+        main_counts.update(ticket[:k])
+        if bonus_max:
+            bonus_counts[ticket[k]] += 1
+
+    def ranking(counts, maximum):
+        return [{'number': n, 'count': counts[n], 'sample_rate': counts[n] / samples}
+                for n in sorted(range(1, maximum + 1), key=lambda n: (-counts[n], n))]
+
+    main_ranking = ranking(main_counts, maximum)
+    bonus_ranking = ranking(bonus_counts, bonus_max) if bonus_max else []
+    suggested = sorted(row['number'] for row in main_ranking[:k])
+    if bonus_ranking:
+        suggested.append(bonus_ranking[0]['number'])
+    return {'product': product, 'seed': seed, 'samples': samples,
+            'history_draws': len(draws), 'main_ranking': main_ranking,
+            'bonus_ranking': bonus_ranking, 'suggested_numbers': suggested,
+            'note': 'Ranks describe engine sampling frequency, not next-draw winning probabilities.'}
+
 def stats(draws,product):
     maximum,_,_=PRODUCTS[product]; freq=Counter(); pairs=Counter(); last={}
     odd=Counter()
@@ -131,10 +159,11 @@ def backtest(draws,product,window=60,min_history=1):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('command',choices=['predict','stats','backtest']); p.add_argument('--data',required=True)
+    p.add_argument('command',choices=['predict','simulate','stats','backtest']); p.add_argument('--data',required=True)
     p.add_argument('--product',choices=PRODUCTS,default='645'); p.add_argument('--seed',type=lambda s:int(s,0)); p.add_argument('--tickets',type=int,default=1)
     p.add_argument('--window',type=int,default=60,help='0 means all history'); p.add_argument('--target-code',type=int)
     p.add_argument('--min-history',type=int,default=1)
+    p.add_argument('--samples',type=int,default=1000,help='number of simulated tickets')
     args=p.parse_args(); draws=load(args.data,args.product)
     if args.window<0: p.error('window must be nonnegative')
     if args.command=='backtest': result=backtest(draws,args.product,args.window,args.min_history)
@@ -143,7 +172,11 @@ def main():
         if args.window: draws=draws[:args.window]
         if args.command=='stats': result=stats(draws,args.product)
         else:
-            if args.seed is None: p.error('predict requires --seed for reproducible results')
-            result={'product':args.product,'seed':args.seed,'history_draws':len(draws),'tickets':predict(draws,args.product,args.seed,args.tickets),'compatibility':'static reconstruction; not compared with original runtime'}
+            if args.seed is None: p.error(f'{args.command} requires --seed for reproducible results')
+            if args.command=='simulate':
+                if args.samples < 1: p.error('samples must be positive')
+                result=simulate(draws,args.product,args.seed,args.samples)
+            else:
+                result={'product':args.product,'seed':args.seed,'history_draws':len(draws),'tickets':predict(draws,args.product,args.seed,args.tickets),'compatibility':'static reconstruction; not compared with original runtime'}
     print(json.dumps(result,ensure_ascii=False,indent=2))
 if __name__=='__main__': main()

@@ -13,6 +13,7 @@ make help
 make crawl
 make predict
 make predict PRODUCT=535 SEED=123 TICKETS=10 WINDOW=60
+make simulate PRODUCT=645 SAMPLES=1000
 make stats PRODUCT=655
 make backtest PRODUCT=645
 make test
@@ -37,6 +38,11 @@ results. `--window` defaults to 60 draws; 0 uses all available history.
 
 The crawler updates all three CSV files, adding results that are not already
 stored. Select a product with `python3 crawl.py --products 535`.
+
+`make simulate` generates 1,000 sample tickets by default, ranks main and bonus
+numbers separately, and returns a suggested combination of the highest ranked
+numbers. Use `SAMPLES`, `SEED`, `PRODUCT`, and `WINDOW` to adjust the simulation.
+These rankings measure engine sampling frequency, not winning probabilities.
 
 To install the CLI in a virtual environment, run `python3 -m pip install -e .`,
 then use `drawscope predict --data databases/645.csv --seed 42 --tickets 5`.

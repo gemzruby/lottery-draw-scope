@@ -78,6 +78,32 @@ zone = (~(((1 << 32) - n) % n)) & ((1 << 32) - 1)
 Main-number and pool-index sampling use u64 reads. Bonus sampling with an empty
 pool uses u32 reads. Replacing this RNG with Python's `random` changes outputs.
 
+## Monte Carlo simulation
+
+`simulate(draws, product, seed, samples=1000)` generates one ticket per seed,
+using `(seed + i) % 2**64` for sample `i`. Each sample uses the same history and
+weights. Duplicate tickets across samples are counted, preserving their effect
+on the estimated sampling distribution. The prediction ticket-count limit does
+not restrict the number of simulation samples.
+
+Main and bonus numbers are counted separately. Rankings include every number
+in the relevant range and sort by descending count, then ascending number for
+ties. `sample_rate` is the fraction of tickets containing the number in that
+role, not the probability of winning a future draw.
+
+`suggested_numbers` contains the highest-ranked main numbers, sorted ascending,
+followed by the highest-ranked bonus when applicable. This combination need not
+have appeared in a sampled ticket. A simulation is reproducible with the same
+inputs, seed, and sample count.
+
+```bash
+make simulate PRODUCT=645 SAMPLES=1000 SEED=42 WINDOW=60
+python3 main.py simulate --data databases/535.csv --product 535 --seed 42 --samples 1000
+```
+
+The existing backtest evaluates direct predictions and its baseline. It does
+not yet evaluate simulation-ranked suggestions.
+
 ## History, statistics, and backtesting
 
 The loader validates number counts, ranges, unique main numbers, and unique draw
