@@ -78,7 +78,7 @@ def load(path,product):
         draws=[Draw(int(r['draw_code']),tuple(int(x) for x in r['numbers'].replace(',',' ').split()),int(r['bonus']) if r.get('bonus') else None,r.get('draw_date','')) for r in rows]
     return validate(draws,product)
 
-def predict(draws,product,seed,tickets=1,bonus_pool=None):
+def predict(draws,product,seed,tickets=1,bonus_pool=None,*,_weights=None):
     """Generate tickets with fixed frequency weights and a reproducible RNG.
 
     Frequency is fixed across draws/tickets. Repeated main numbers consume RNG
@@ -87,8 +87,12 @@ def predict(draws,product,seed,tickets=1,bonus_pool=None):
     """
     maximum,k,bonus_max=PRODUCTS[product]
     if not 0<=tickets<=255: raise ValueError('tickets must be 0..255')
-    freq=Counter(n for d in draws for n in d.numbers if 0<=n<=maximum)
-    rng=ChaCha8(seed); weights=[freq[n]+1 for n in range(1,maximum+1)]
+    if _weights is None:
+        freq=Counter(n for d in draws for n in d.numbers if 0<=n<=maximum)
+        weights=[freq[n]+1 for n in range(1,maximum+1)]
+    else:
+        weights=_weights
+    rng=ChaCha8(seed)
     pool=list(bonus_pool) if bonus_pool is not None else [d.bonus for d in draws if d.bonus is not None]
     if any(bonus_max is None or not 1<=n<=bonus_max for n in pool): raise ValueError('invalid bonus pool')
     out=[]; seen=set()
@@ -116,9 +120,11 @@ def simulate(draws, product, seed, samples=1000, bonus_pool=None):
     maximum, k, bonus_max = PRODUCTS[product]
     main_counts, bonus_counts = Counter(), Counter()
     seed &= MASK64
-    pool = list(bonus_pool) if bonus_pool is not None else None
+    pool = list(bonus_pool) if bonus_pool is not None else [d.bonus for d in draws if d.bonus is not None]
+    frequency = Counter(n for d in draws for n in d.numbers if 0 <= n <= maximum)
+    weights = [frequency[n]+1 for n in range(1,maximum+1)]
     for i in range(samples):
-        ticket = predict(draws, product, (seed + i) & MASK64, 1, pool)[0]['numbers']
+        ticket = predict(draws, product, (seed + i) & MASK64, 1, pool, _weights=weights)[0]['numbers']
         main_counts.update(ticket[:k])
         if bonus_max:
             bonus_counts[ticket[k]] += 1
@@ -145,17 +151,27 @@ def stats(draws,product):
         for n in d.numbers: last.setdefault(n,age)
     return {'draws':len(draws),'frequency':{n:freq[n] for n in range(1,maximum+1)},'hot':sorted(range(1,maximum+1),key=lambda n:(-freq[n],n))[:10], 'cold':sorted(range(1,maximum+1),key=lambda n:(freq[n],n))[:10], 'gap':{n:last.get(n) for n in range(1,maximum+1)}, 'odd_count_distribution':dict(odd),'pairs':[{'numbers':p,'count':c} for p,c in pairs.most_common(10)]}
 
-def backtest(draws,product,window=60,min_history=1):
+def backtest(draws,product,window=60,min_history=1,strategy='predict',samples=1000,
+             seed_offset=0,target_codes=None):
     """Historical simulation using only draws preceding each target draw."""
+    if window < 0 or min_history < 1: raise ValueError('window must be nonnegative and min_history positive')
+    if strategy not in ('predict','simulate'): raise ValueError('unknown strategy')
+    if samples < 1: raise ValueError('samples must be positive')
+    targets=set(target_codes) if target_codes is not None else None
     ordered=sorted(draws,key=lambda d:d.code); rows=[]
     for i,target in enumerate(ordered):
-        if i<min_history: continue
+        if i<min_history or (targets is not None and target.code not in targets): continue
         prior=list(reversed(ordered[max(0,i-window):i])) if window else list(reversed(ordered[:i]))
-        pred=predict(prior,product,(target.code+BACKTEST_SEED)&MASK64)[0]['numbers']
-        base=predict([],product,(target.code+BASELINE_SEED)&MASK64)[0]['numbers']
+        seed=(target.code+BACKTEST_SEED+seed_offset)&MASK64
+        pred=(simulate(prior,product,seed,samples)['suggested_numbers'] if strategy=='simulate'
+              else predict(prior,product,seed)[0]['numbers'])
+        base=predict([],product,(target.code+BASELINE_SEED+seed_offset)&MASK64)[0]['numbers']
         k=PRODUCTS[product][1]
-        rows.append({'draw_code':target.code,'prediction':pred,'hits':len(set(pred[:k])&set(target.numbers)), 'baseline':base,'baseline_hits':len(set(base[:k])&set(target.numbers))})
-    return {'periods':len(rows),'cost_vnd':len(rows)*10000,'hit_histogram':dict(Counter(r['hits'] for r in rows)), 'baseline_hit_histogram':dict(Counter(r['baseline_hits'] for r in rows)), 'rows':rows,'roi':None,'note':'Payout/jackpot rules were not fully recovered; ROI intentionally omitted.'}
+        rows.append({'draw_code':target.code,'prediction':pred,'hits':len(set(pred[:k])&set(target.numbers)), 'baseline':base,'baseline_hits':len(set(base[:k])&set(target.numbers)),
+                     'bonus_hit': int(pred[k]==target.bonus) if target.bonus is not None and len(pred)>k else None,
+                     'baseline_bonus_hit': int(base[k]==target.bonus) if target.bonus is not None and len(base)>k else None})
+    return {'periods':len(rows),'strategy':strategy,'window':window,'samples':samples if strategy=='simulate' else None,
+            'seed_offset':seed_offset,'cost_vnd':len(rows)*10000,'hit_histogram':dict(Counter(r['hits'] for r in rows)), 'baseline_hit_histogram':dict(Counter(r['baseline_hits'] for r in rows)), 'rows':rows,'roi':None,'note':'Prize rules and ROI are not implemented.'}
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
@@ -164,9 +180,12 @@ def main():
     p.add_argument('--window',type=int,default=60,help='0 means all history'); p.add_argument('--target-code',type=int)
     p.add_argument('--min-history',type=int,default=1)
     p.add_argument('--samples',type=int,default=1000,help='number of simulated tickets')
+    p.add_argument('--strategy',choices=['predict','simulate'],default='predict',help='backtest strategy')
     args=p.parse_args(); draws=load(args.data,args.product)
     if args.window<0: p.error('window must be nonnegative')
-    if args.command=='backtest': result=backtest(draws,args.product,args.window,args.min_history)
+    if args.command=='backtest':
+        if args.min_history < 1 or args.samples < 1: p.error('min-history and samples must be positive')
+        result=backtest(draws,args.product,args.window,args.min_history,args.strategy,args.samples,args.seed or 0)
     else:
         if args.target_code is not None: draws=[d for d in draws if d.code<args.target_code]
         if args.window: draws=draws[:args.window]

@@ -21,6 +21,11 @@ These dates and results reflect Lotto-8 data and have not been independently
 verified against official Vietlott records. Downloads include API index 9 and
 later records; indices 1 through 8 are outside the initial-download boundary.
 
+The evaluation audit flags Power 6/55 record `20170102` as predating its
+2017-08-01 launch, and excludes it from evaluation history and targets while
+preserving the raw CSV. Mega 6/45 record `20190418` has an unusual weekday and
+requires review; it is not automatically excluded. See [evaluation report](EVALUATION.md).
+
 ## Draw identifiers and number fields
 
 For `535.csv`, `draw_code` comes from the draw label in the API's `date` field.

@@ -4,9 +4,13 @@ SEED ?= 42
 TICKETS ?= 5
 WINDOW ?= 60
 SAMPLES ?= 1000
+STRATEGY ?= predict
+BACKTEST_SEED ?= 0
+WORKERS ?= 2
+ROUND_SEED ?=
 
 .DEFAULT_GOAL := help
-.PHONY: help crawl predict simulate stats backtest test
+.PHONY: help crawl predict simulate stats backtest evaluate round test
 
 help:
 	@echo "make crawl     Update all lottery CSV files"
@@ -14,6 +18,8 @@ help:
 	@echo "make simulate  Rank numbers from sampled tickets (PRODUCT=645 SEED=42 SAMPLES=1000 WINDOW=60)"
 	@echo "make stats     Show historical statistics (PRODUCT=645 WINDOW=60)"
 	@echo "make backtest  Run historical backtest (PRODUCT=645 WINDOW=60)"
+	@echo "make round     Run ten backtests (PRODUCT=645 SAMPLES=1000 WORKERS=2)"
+	@echo "make evaluate  Alias for make round"
 	@echo "make test      Run all tests"
 
 crawl:
@@ -29,7 +35,12 @@ simulate:
 	$(PYTHON) main.py simulate --data databases/$(PRODUCT).csv --product $(PRODUCT) --seed $(SEED) --samples $(SAMPLES) --window $(WINDOW)
 
 backtest:
-	$(PYTHON) main.py backtest --data databases/$(PRODUCT).csv --product $(PRODUCT) --window $(WINDOW)
+	$(PYTHON) main.py backtest --data databases/$(PRODUCT).csv --product $(PRODUCT) --window $(WINDOW) --strategy $(STRATEGY) --samples $(SAMPLES) --seed $(BACKTEST_SEED)
+
+round:
+	$(PYTHON) run_round.py --product $(PRODUCT) $(if $(ROUND_SEED),--seed $(ROUND_SEED),) --samples $(SAMPLES) --workers $(WORKERS)
+
+evaluate: round
 
 test:
 	$(PYTHON) -m unittest discover -s tests -v

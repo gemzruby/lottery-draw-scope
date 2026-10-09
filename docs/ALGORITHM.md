@@ -101,8 +101,8 @@ make simulate PRODUCT=645 SAMPLES=1000 SEED=42 WINDOW=60
 python3 main.py simulate --data databases/535.csv --product 535 --seed 42 --samples 1000
 ```
 
-The existing backtest evaluates direct predictions and its baseline. It does
-not yet evaluate simulation-ranked suggestions.
+Backtesting supports both direct predictions and simulation-ranked suggestions.
+Use `make backtest STRATEGY=simulate SAMPLES=1000` to evaluate the latter.
 
 ## History, statistics, and backtesting
 
@@ -118,6 +118,52 @@ Backtesting uses only draws preceding each target. The target seed is
 `(target.code + 0x00c0ffee12345677) % 2**64`. The baseline uses empty history and
 `(target.code + 0x175efdd434567869) % 2**64`. Results count main-number matches.
 ROI is not implemented. `cost_vnd` currently assumes VND 10,000 per ticket.
+`--seed` adds an offset to each backtest seed; the Makefile uses
+`BACKTEST_SEED=0` by default. Bonus matches are recorded separately and do not
+represent prize eligibility.
+
+## Round evaluation
+
+Run `make round PRODUCT=645` (or `make evaluate PRODUCT=645`) for ten backtest
+iterations. Each iteration compares predict and simulate across windows 30, 60,
+120, and 0 (all preceding history), with one seed offset. Ten widely spaced
+seed offsets provide variation across the round. Default simulations use 1,000
+samples per target in both development and holdout evaluation.
+
+The 60 targets immediately before the final 60 draws form the development block.
+Each iteration selects a strategy and window by development mean main hits;
+only that configuration is scored on the holdout. Splits keep same-date draws
+together. Earlier holdout results become history for later predictions.
+All configurations use at least 120 preceding draws to ensure comparable targets.
+
+Each run also generates a suggestion using the selected configuration and the
+latest audited history. The round summary counts appearances in the ten
+suggestions, then returns the top two main-number combinations under an additive
+consensus score. Ties prefer smaller numbers. Bonus numbers are ranked separately.
+Holdout scores are reported but never used to select or weight suggestions.
+
+Files use the round start time in Asia/Ho_Chi_Minh:
+
+```text
+backtests/645_1425_091026_1.json
+...
+backtests/645_1425_091026_10.json
+backtests/suggestions/645_1425_091026.json
+```
+
+The summary is written only after all ten iterations succeed. A repeated round
+for the same product/minute is rejected rather than overwriting results. Each
+run includes the source CSV hash, audit, split codes, selected configuration,
+per-draw backtest results, and its generated suggestion. See [ROUNDS.md](ROUNDS.md).
+
+Raw CSV files are preserved. Power 6/55 records dated before its documented launch,
+2017-08-01, are excluded from evaluation. Other weekday anomalies are flagged
+for review. Results have not been independently verified in full.
+
+All ten iterations reuse the same history, and earlier full-history backtests
+were already inspected. This is exploratory, not ten independent datasets or
+proof of improved winning probabilities. Future draws are needed for genuinely
+unseen validation. ROI is not computed.
 
 ## Validation scope
 

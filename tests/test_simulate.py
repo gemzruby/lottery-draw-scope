@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from main import MASK64, PRODUCTS, simulate
+from main import MASK64, PRODUCTS, simulate, predict, Draw
 
 
 class SimulationTests(unittest.TestCase):
@@ -36,3 +36,17 @@ class SimulationTests(unittest.TestCase):
         for count in [0, -1, 1.5, True]:
             with self.assertRaises(ValueError):
                 simulate([], '645', 42, count)
+
+    def test_cached_weights_preserve_direct_prediction_counts(self):
+        from collections import Counter
+        draws=[Draw(1,(1,2,3,4,5),2),Draw(2,(1,2,3,6,7),7)]
+        main_counts,bonus_counts=Counter(),Counter()
+        for seed in range(42,72):
+            ticket=predict(draws,'535',seed)[0]['numbers']
+            main_counts.update(ticket[:5])
+            bonus_counts[ticket[5]]+=1
+        result=simulate(draws,'535',42,30)
+        self.assertEqual({r['number']:r['count'] for r in result['main_ranking']},
+                         {n:main_counts[n] for n in range(1,36)})
+        self.assertEqual({r['number']:r['count'] for r in result['bonus_ranking']},
+                         {n:bonus_counts[n] for n in range(1,13)})
